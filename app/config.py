@@ -12,7 +12,7 @@ class ProdConfig(DevConfig):
 	SECRET_KEY = os.environ.get("FLASK_SECRET") or "dev_key"
 	UPLOAD_FOLDER = "/opt/python/current/app/app/static/images"
 	if os.environ.get("RDS_HOSTNAME"):
-		SQLALCHEMY_DATABASE_URI = "mysql://" + \
+		SQLALCHEMY_DATABASE_URI = "mysql+pymysql://" + \
 								  os.environ["RDS_USERNAME"] + ":" + \
 								  os.environ["RDS_PASSWORD"] + "@" + \
 								  os.environ["RDS_HOSTNAME"] + ":" + \
