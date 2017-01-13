@@ -9,7 +9,7 @@
 	 		</header>
 	 		<div class='w3-container'>
 	 			<a href="/gallery/?image={{photo.id}}">
-					<img src="/static/images/{{photo.image}}" style="width:100%">
+					<img src="{{ url_for('static', filename='images/'+photo.imgfilename)}}" style="width:100%">
 				</a>
 				<p> {{photo.comment}}</p>
 				<p><b> Price:</b> ${{photo.price}}</p>
@@ -24,3 +24,4 @@
 		</div> 
 	</div>
 {% endblock %}
+

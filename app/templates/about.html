@@ -13,57 +13,59 @@
 		<br />
 	</div>
 	<div class="w3-row" id="myGrid" style="margin-bottom:128px">
-	 	<div class="w3-third">
-	 		{% for photo in row1: %}
-	 			<a href="/gallery/image/{{photo.id}}">
-					<img src="/static/images/{{photo.image}}" style="width:100%">
-				</a>
-			{% endfor %}
+	
+		<div class="w3-third">
+		{% for photo in photos.items[0::3] %}
+ 			<a href="/gallery/image/{{photo.id}}">
+				<img src="{{ url_for('static', filename='images/'+photo.imgfilename)}}" style="width:100%">
+			</a>
+		{% endfor %}
 		</div>
 		<div class="w3-third">
-	 		{% for photo in row2: %}
-	 			<a href="/gallery/image/{{photo.id}}">
-					<img src="/static/images/{{photo.image}}" style="width:100%">
-				</a>
-			{% endfor %}
+		{% for photo in photos.items[1::3] %}
+ 			<a href="/gallery/image/{{photo.id}}">
+				<img src="{{ url_for('static', filename='images/'+photo.imgfilename)}}" style="width:100%">
+			</a>
+		{% endfor %}
 		</div>
 		<div class="w3-third">
-	 		{% for photo in row3: %}
-	 			<a href="/gallery/image/{{photo.id}}">
-					<img src="/static/images/{{photo.image}}" style="width:100%">
-				</a>
-			{% endfor %}
+		{% for photo in photos.items[2::3] %}
+ 			<a href="/gallery/image/{{photo.id}}">
+				<img src="{{ url_for('static', filename='images/'+photo.imgfilename)}}" style="width:100%">
+			</a>
+		{% endfor %}
 		</div>
+		
 	</div>
 	<div class="w3-container">
 		<div class=" btn-center">
-			<a href="/">
+			<a href="{{ url_for('main.about') }}">
 				<button class="w3-btn w3-hover-white" ><i class="fa fa-arrow-left"></i></button>
 			</a>
-			{% if page.prev2 > 0: %}
-				<a href="/gallery/{{page.prev2}}">
-					<button class="w3-btn w3-teal w3-hover-white" >{{ page.prev2 }}</button>
+			{% if photos.prev_num -1 > 0 %}
+				<a href="{{ url_for('main.about', page=photos.prev_num-1) }}">
+					<button class="w3-btn w3-teal w3-hover-white" >{{ photos.prev_num - 1 }}</button>
 				</a>
 			{% endif %}
-			{% if page.prev > 0: %}
-				<a href="/gallery/{{page.prev}}">
-					<button class="w3-btn w3-teal w3-hover-white" >{{ page.prev }}</button>
+			{% if photos.has_prev %}
+				<a href="{{ url_for('main.about', page=photos.prev_num) }}">
+					<button class="w3-btn w3-teal w3-hover-white" >{{ photos.prev_num }}</button>
 				</a>
 			{% endif %}
-			<a href="/gallery/{{page.current}}">
-				<button class="w3-btn w3-teal w3-hover-white" >{{ page.current }}</button>
+			<a href="{{ url_for('main.about', page=photos.page) }}">
+				<button class="w3-btn w3-teal w3-hover-white" >{{ photos.page }}</button>
 			</a>
-			{% if page.next <= num_pages: %}
-				<a href="/gallery/{{page.next}}">
-					<button class="w3-btn w3-hover-white" disabled>{{page.next}}</button>
+			{% if photos.has_next %}
+				<a href="{{ url_for('main.about', page=photos.next_num) }}">
+					<button class="w3-btn w3-teal w3-hover-white" >{{ photos.next_num }}</button>
 				</a>
 			{% endif %}
-			{% if page.next2 <=num_pages: %}
-				<a href="/gallery/{{page.next2}}">
-					<button class="w3-btn w3-hover-white" disabled>{{page.next2}}</button>
+			{% if photos.next_num + 1 <= photos.pages %}
+				<a href="{{ url_for('main.about', page=photos.next_num+1) }}">
+					<button class="w3-btn w3-teal w3-hover-white" >{{ photos.next_num + 1 }}</button>
 				</a>
 			{% endif %}
-			<a href="/gallery/{{num_pages}}">
+			<a href="{{ url_for('main.about', page=pages) }}">
 				<button class="w3-btn w3-hover-white" ><i class="fa fa-arrow-right"></i></button>
 			</a>
 		</div> 

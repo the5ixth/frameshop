@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% from "macros.html" import render_field %}
 
 {%  block body %}
 	<div class="w3-card-4 c-card">
@@ -6,28 +7,16 @@
 		  	<h2>Upload an Image</h2>
 		</div>
 		<form class="w3-container" method='POST' action='/upload' enctype="multipart/form-data">
-			{{ form.hidden_tag() }}
-			{{ form.csrf_token }}
-		
-			<input class="w3-input id="title" name="title" value="" type="text" required>
-			<label class="w3-label w3-validate">Title</label><br />
-		
-			{{ form.file.label }} {{ form.file }} <br />
-		
-			<textarea class="w3-input id="title" name="comment" value="" type="text" required></textarea> 
-			<label class="w3-label w3-validate">Comment</label>
-		
-			<p>If you want it blank enter 0</p>
-		
-			<input class="w3-input id="title" name="price" value="" type="text">
-			<label class="w3-label">Price</label>
-		
-			<p>If you want it blank enter blank </p>
-		
-			<input class="w3-input id="title" name="artist" value="" type="text" >
-			<label class="w3-label ">Artist</label>
-		
-			<input type='submit' value='GO'>
+			<dl>
+				{{ form.csrf_token() }}
+				{{ render_field(form.title) }}
+				{{ render_field(form.imgfile) }}
+				{{ render_field(form.comment) }}
+				{{ render_field(form.price) }}
+				{{ render_field(form.artist) }}
+				
+			</dl>
+			{{ render_field(form.submit) }}
 		</form>
 	</div>
 {% endblock %}
