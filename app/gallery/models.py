@@ -4,7 +4,7 @@ from .. import db
 class Photo(db.Model):
 	__tablename__='photos'
 	id = db.Column(db.Integer, primary_key=True)
-	imgfilename = db.Column(db.String(50))
+	imgfilename = db.Column(db.String(128))
 	title = db.Column(db.String(50))
 	comment = db.Column(db.Text)
 	price = db.Column(db.Integer, default=0)

@@ -8,6 +8,6 @@ class UploadForm(FlaskForm):
 	imgfile = FileField("Image File", validators=[FileRequired(),
 												  FileAllowed(["jpg", "png"])])
 	comment = TextAreaField('Comment: ', validators=[DataRequired()])
-	price = IntegerField('Price :', validators=[DataRequired()])
-	artist = StringField('Artist: ', validators=[DataRequired()])
+	price = IntegerField('Price :', validators=[])
+	artist = StringField('Artist: ', validators=[])
 	submit = SubmitField("Submit")

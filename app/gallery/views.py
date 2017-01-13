@@ -14,7 +14,11 @@ main = Blueprint("main", __name__)
 def about():
 	photos = Photo.query.order_by(Photo.id.desc()).paginate(per_page=15, page=request.args.get("page", 1, type=int))
 	return render_template('about.html', photos=photos)
-		
+	
+@main.route('/gallery')
+def gallery():
+	photos = Photo.query.order_by(Photo.id.desc()).paginate(per_page=15, page=request.args.get("page", 1, type=int))
+	return render_template('gallery.html', photos=photos)	
 
 @main.route('/gallery/image/<int:num>')
 def view(num):

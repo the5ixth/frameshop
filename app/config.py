@@ -8,6 +8,7 @@ class DevConfig:
 	UPLOAD_FOLDER = '/home/the5ixth/Desktop/frame/frameshop/app/static/images'
 	ALLOWED_EXTENSIONS = set([ 'png', 'jpg', 'jpeg', 'gif'])
 	
+	
 class ProdConfig(DevConfig):
 	SECRET_KEY = os.environ.get("FLASK_SECRET") or "dev_key"
 	UPLOAD_FOLDER = "/opt/python/current/app/app/static/images"
