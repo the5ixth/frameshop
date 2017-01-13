@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <title>Genesis Frame Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel='stylesheet' href="/static/css/custom.css">
+
+    <style><
+        body,h1 {font-family: "Montserrat", sans-serif}
+        img {margin-bottom: -7px}
+        .w3-row-padding img {margin-bottom: 12px}t
+    </style>
+    <body>
+
+        <!-- Sidenav -->
+        <nav class="w3-sidenav w3-black w3-animate-top w3-center w3-xxlarge" style="display:none;padding-top:150px" id="mySidenav">
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-jumbo w3-display-topright" style="padding:6px 24px">
+                <i class="fa fa-remove"></i>
+            </a>
+            <a href="/" class="w3-text-grey w3-hover-black">About</a>
+            <a href="/gallery" class="w3-text-grey w3-hover-black">Photos</a>
+            <a href="/contact" class="w3-text-grey w3-hover-black">Contact</a>
+            <a href="/upload" class="w3-text-grey w3-hover-black">Upload</a>
+        </nav>
+
+        <!-- !PAGE CONTENT! -->
+        <div class="w3-content" style="max-width:1500px">
+
+        <!-- Header -->
+        <header class="w3-container w3-padding-32 w3-center w3-margin-bottom">
+          <span class="w3-opennav w3-xxlarge w3-right w3-margin-right" onclick="w3_open()"><i class="fa fa-bars"></i></span> 
+          <h1 class='logger'>GENESIS FRAME SHOP</h1>
+        </header>
+
+
+        {% block body %}
+        {% endblock %}
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px"> 
+            <a href='https://www.facebook.com/pages/Genesis-Frame-Shop-Gallery/1501648950127464'>
+                <i class="fa fa-facebook-official w3-hover-text-indigo"></i>
+            </a>
+            <!--  <i class="fa fa-instagram w3-hover-text-purple"></i> -->
+            <!--  <i class="fa fa-snapchat w3-hover-text-yellow"></i>-->
+            <!--  <i class="fa fa-pinterest-p w3-hover-text-red"></i>-->
+            <!--  <i class="fa fa-twitter w3-hover-text-light-blue"></i>-->
+    		<i class="fa fa-linkedin w3-hover-text-indigo"></i>
+        </footer>
+         
+        <script>
+
+        // Open and close sidenav
+        function w3_open() {
+            document.getElementById("mySidenav").style.width = "100%";
+            document.getElementById("mySidenav").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidenav").style.display = "none";
+        }
+        </script>
+
+    </body>
+</html>
+

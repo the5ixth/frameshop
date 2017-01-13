@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Logger'; /*a name to be used later*/
+    src: url('logger.TTF'); /*URL to font*/
+}
+
+body {
+    background: url("wood.jpeg") no-repeat center;
+}
+
+.logger{
+	padding-top: 20px;
+	font-family: Logger;
+	font-size: 60px;
+	color: white;
+	background: black;
+	border-radius: 15px;
+	border-color: black;
+}
+
+.card-header{
+	text-align: center;
+}
+
+.btn-center{
+	text-align: center;
+}
+.btn-grp{
+	margin: auto;
+}
+.c-card{
+	background: white;
+}
+.w3-opennav, .w3-closenav{
+	color: white;
+}
+
+.text-right{
+	text-align: right;
+}
+.text-left{
+	text-align: left;
+}

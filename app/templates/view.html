@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+	<div class="w3-row" id="myGrid" style="margin-bottom:128px">
+	 	<div class="w3-card-4 c-card">
+	 		<header class='W3-container'>
+	 			<h1 class='card-header'> {{photo.title}}</h1>
+	 		</header>
+	 		<div class='w3-container'>
+	 			<a href="/gallery/?image={{photo.id}}">
+					<img src="/static/images/{{photo.image}}" style="width:100%">
+				</a>
+				<p> {{photo.comment}}</p>
+				<p><b> Price:</b> ${{photo.price}}</p>
+				<p><b> Artist: </b>s{{photo.price}}</p>
+			</div>
+		</div>
+		<br />
+		<div class="btn-center">
+			<a href="/">
+				<button class="w3-btn w3-round-xlarge w3-hover-white">Back to Gallery</button>
+			</a>
+		</div> 
+	</div>
+{% endblock %}

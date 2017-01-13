@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+
+{%  block body %}
+	<div class="w3-row" id="myGrid" style="margin-bottom:128px">
+	 	<div class="w3-card-4 c-card">
+	 		<header class='W3-container'>
+	 			<h1 class='card-header'> </h1>
+	 		</header>
+	 		<div class='w3-container'>
+			</div>
+		</div>
+		<br />
+	</div>
+	<div class="w3-row" id="myGrid" style="margin-bottom:128px">
+	 	<div class="w3-third">
+	 		{% for photo in row1: %}
+	 			<a href="/gallery/image/{{photo.id}}">
+					<img src="/static/images/{{photo.image}}" style="width:100%">
+				</a>
+			{% endfor %}
+		</div>
+		<div class="w3-third">
+	 		{% for photo in row2: %}
+	 			<a href="/gallery/image/{{photo.id}}">
+					<img src="/static/images/{{photo.image}}" style="width:100%">
+				</a>
+			{% endfor %}
+		</div>
+		<div class="w3-third">
+	 		{% for photo in row3: %}
+	 			<a href="/gallery/image/{{photo.id}}">
+					<img src="/static/images/{{photo.image}}" style="width:100%">
+				</a>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="w3-container">
+		<div class=" btn-center">
+			<a href="/">
+				<button class="w3-btn w3-hover-white" ><i class="fa fa-arrow-left"></i></button>
+			</a>
+			{% if page.prev2 > 0: %}
+				<a href="/gallery/{{page.prev2}}">
+					<button class="w3-btn w3-teal w3-hover-white" >{{ page.prev2 }}</button>
+				</a>
+			{% endif %}
+			{% if page.prev > 0: %}
+				<a href="/gallery/{{page.prev}}">
+					<button class="w3-btn w3-teal w3-hover-white" >{{ page.prev }}</button>
+				</a>
+			{% endif %}
+			<a href="/gallery/{{page.current}}">
+				<button class="w3-btn w3-teal w3-hover-white" >{{ page.current }}</button>
+			</a>
+			{% if page.next <= num_pages: %}
+				<a href="/gallery/{{page.next}}">
+					<button class="w3-btn w3-hover-white" disabled>{{page.next}}</button>
+				</a>
+			{% endif %}
+			{% if page.next2 <=num_pages: %}
+				<a href="/gallery/{{page.next2}}">
+					<button class="w3-btn w3-hover-white" disabled>{{page.next2}}</button>
+				</a>
+			{% endif %}
+			<a href="/gallery/{{num_pages}}">
+				<button class="w3-btn w3-hover-white" ><i class="fa fa-arrow-right"></i></button>
+			</a>
+		</div> 
+	</div>
+{% endblock %}
