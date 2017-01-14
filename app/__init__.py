@@ -16,7 +16,7 @@ def create_app(config="dev"):
 	app.register_blueprint(main)
 	
 	with app.app_context():
-		db.drop_all()
+		# db.drop_all()
 		db.create_all()
 		
 	return app
