@@ -11,9 +11,13 @@
 	 			<a href="/gallery/?image={{photo.id}}">
 					<img src="{{ url_for('static', filename='images/'+photo.imgfilename)}}" style="width:100%">
 				</a>
-				<p> {{photo.comment}}</p>
-				<p><b> Price:</b> ${{photo.price}}</p>
-				<p><b> Artist: </b>s{{photo.price}}</p>
+				<p class="comment"> {{photo.comment}}</p>
+				{% if photo.price != 0: %}
+					<p><b> Sold for:</b> ${{photo.price}}</p>
+				{% endif %}
+				{% if photo.artist: %}
+					<p><b> Artist: </b>s{{photo.artist}}</p>
+				{% endif %}
 			</div>
 		</div>
 		<br />

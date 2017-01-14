@@ -17,7 +17,14 @@
     </style>
     <body>
 
-        <!-- Sidenav -->
+		<ul class="w3-navbar w3-border w3-light-grey w3-top">
+			<li><a class="logger" href="/">GENESIS FRAME SHOP</a></li>
+			<li><a class="w3-hover-grey" href="/">Home</a></li>
+			<li><a class="w3-hover-grey" href="{{ url_for( 'main.gallery' ) }}">Gallery</a></li>
+			<li><a class="w3-hover-grey" href="{{ url_for( 'main.about' ) }}">Contact</a></li>
+			<li class="w3-right"><a class="w3-hover-grey" href="{{ url_for( 'main.upload' ) }}">Upload</a></li>
+		</ul>
+        <!-- Sidenav 
         <nav class="w3-sidenav w3-black w3-animate-top w3-center w3-xxlarge" style="display:none;padding-top:150px" id="mySidenav">
             <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-jumbo w3-display-topright" style="padding:6px 24px">
                 <i class="fa fa-remove"></i>
@@ -27,32 +34,37 @@
             <a href="/contact" class="w3-text-grey w3-hover-black">Contact</a>
             <a href="/upload" class="w3-text-grey w3-hover-black">Upload</a>
         </nav>
-
+		-->
+		
         <!-- !PAGE CONTENT! -->
-        <div class="w3-content" style="max-width:1500px">
-
-        <!-- Header -->
-        <header class="w3-container w3-padding-32 w3-center w3-margin-bottom">
-          <span class="w3-opennav w3-xxlarge w3-right w3-margin-right" onclick="w3_open()"><i class="fa fa-bars"></i></span> 
-          <h1 class='logger'>GENESIS FRAME SHOP</h1>
-        </header>
-
+        
+        <div class="w3-content" style="max-width:1200px">
 
         {% block body %}
         {% endblock %}
 
-        </div>
-
+		</div>
+		
         <!-- Footer -->
-        <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px"> 
-            <a href='https://www.facebook.com/pages/Genesis-Frame-Shop-Gallery/1501648950127464'>
-                <i class="fa fa-facebook-official w3-hover-text-indigo"></i>
-            </a>
-            <!--  <i class="fa fa-instagram w3-hover-text-purple"></i> -->
-            <!--  <i class="fa fa-snapchat w3-hover-text-yellow"></i>-->
-            <!--  <i class="fa fa-pinterest-p w3-hover-text-red"></i>-->
-            <!--  <i class="fa fa-twitter w3-hover-text-light-blue"></i>-->
-    		<i class="fa fa-linkedin w3-hover-text-indigo"></i>
+        <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge w3 row" style="margin-top:128px"> 
+        	<div class="w3-col s12 m4 l3 text-left info">
+        		<p> Ken "Rosey" Rosenbaum</p>
+        		<p> 900 Ray Rd Helena, MT </p>
+        		<p> (406)-459-0310</p>
+        		<p> blackhawkme@yahoo.com</p>
+        	</div>
+        	<div class="w3-col s12 m4 l6 w3-center">
+		        <a href='https://www.facebook.com/pages/Genesis-Frame-Shop-Gallery/1501648950127464'>
+		            <i class="fa fa-facebook-official w3-hover-text-indigo"></i>
+		        </a>
+		        <!--  <i class="fa fa-instagram w3-hover-text-purple"></i> -->
+		        <!--  <i class="fa fa-snapchat w3-hover-text-yellow"></i>-->
+		        <!--  <i class="fa fa-pinterest-p w3-hover-text-red"></i>-->
+		        <!--  <i class="fa fa-twitter w3-hover-text-light-blue"></i>-->
+				<i class="fa fa-linkedin w3-hover-text-indigo"></i>
+			</div>
+			</div class="w3-col s12 m4 l3">
+			</div>
         </footer>
          
         <script>

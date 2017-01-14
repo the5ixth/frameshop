@@ -2,7 +2,7 @@ from flask import Blueprint, request, render_template, redirect, url_for, curren
 from werkzeug.utils import secure_filename
 from .models import Photo
 from .forms import UploadForm
-from uuid import uuid4
+import time
 import os
 
 from .. import db
@@ -13,12 +13,13 @@ main = Blueprint("main", __name__)
 @main.route('/')
 def about():
 	photos = Photo.query.order_by(Photo.id.desc()).paginate(per_page=15, page=request.args.get("page", 1, type=int))
-	return render_template('about.html', photos=photos)
+	last_page = int(photos.total / 15 + 1)
+	return render_template('about.html', photos=photos, last_page=last_page)
 	
-@main.route('/gallery')
+@main.route('/gallery/')
 def gallery():
 	photos = Photo.query.order_by(Photo.id.desc()).paginate(per_page=15, page=request.args.get("page", 1, type=int))
-	return render_template('gallery.html', photos=photos)	
+	return render_template('about.html', photos=photos)	
 
 @main.route('/gallery/image/<int:num>')
 def view(num):
@@ -31,7 +32,7 @@ def upload():
 	if form.validate_on_submit():
 		ph = Photo()
 		form.populate_obj(ph)
-		filename = uuid4().hex + "_" + secure_filename(ph.imgfile.filename)
+		filename = time.strftime("%y%j") + "_" + time.strftime("%d%H%S") + "_" + secure_filename(ph.imgfile.filename[-5:])
 		ph.imgfilename = filename
 		form.imgfile.data.save(os.path.join(current_app.config['UPLOAD_FOLDER'],
 									 	    filename))

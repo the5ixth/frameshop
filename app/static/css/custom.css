@@ -4,17 +4,30 @@
 }
 
 body {
-    background: url("wood.jpeg") no-repeat center;
+	margin-top: 50px;
+    background: url("bg-9-full.jpg");
+    background-size: cover;
 }
 
 .logger{
+	font-family: Logger;
+}
+
+.banner{
+	text-align: center;
 	padding-top: 20px;
 	font-family: Logger;
 	font-size: 60px;
-	color: white;
-	background: black;
+	color: black;
+	background: white;
 	border-radius: 15px;
-	border-color: black;
+	opacity: 0.60;
+}
+
+.info p{
+	font-size: 18px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 .card-header{
@@ -39,4 +52,11 @@ body {
 }
 .text-left{
 	text-align: left;
+}
+
+.comment{
+	text-align: center;
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
 }
