@@ -60,3 +60,43 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #fff;
+	background: #19c589;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+.mobile{
+	display: none;
+}
+
+@media screen and (max-width: 760px){
+	.topnav li{
+		display: none;
+	}
+	
+	.mobile{
+		display: block;
+	}
+	
+	body{
+		margin: 0;
+	}
+	
+}

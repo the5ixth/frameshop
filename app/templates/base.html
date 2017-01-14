@@ -16,8 +16,19 @@
         .w3-row-padding img {margin-bottom: 12px}t
     </style>
     <body>
+    	<ul class="w3-navbar w3-border w3-light-grey mobile">
+    		<li class="w3-dropdown-click logger">
+    			<a onclick="myFunction()" href="javascript:void(0)">GENESIS FRAME SHOP</a>
+				<div id="demo" class="w3-dropdown-content w3-border">
+					<a class="w3-hover-grey" href="/">Home</a>
+					<a class="w3-hover-grey" href="{{ url_for( 'main.gallery' ) }}">Gallery</a>
+					<a class="w3-hover-grey" href="{{ url_for( 'main.about' ) }}">Contact</a>
+					<a class="w3-hover-grey" href="{{ url_for( 'main.upload' ) }}">Upload</a>
+				</div>
+			</li>
+		</ul>
 
-		<ul class="w3-navbar w3-border w3-light-grey w3-top">
+		<ul class="w3-navbar w3-border w3-light-grey w3-top topnav">
 			<li><a class="logger" href="/">GENESIS FRAME SHOP</a></li>
 			<li><a class="w3-hover-grey" href="/">Home</a></li>
 			<li><a class="w3-hover-grey" href="{{ url_for( 'main.gallery' ) }}">Gallery</a></li>
@@ -61,7 +72,7 @@
 		        <!--  <i class="fa fa-snapchat w3-hover-text-yellow"></i>-->
 		        <!--  <i class="fa fa-pinterest-p w3-hover-text-red"></i>-->
 		        <!--  <i class="fa fa-twitter w3-hover-text-light-blue"></i>-->
-				<i class="fa fa-linkedin w3-hover-text-indigo"></i>
+				<i class="fa fa-linkedin w3-hover-text-blue"></i>
 			</div>
 			</div class="w3-col s12 m4 l3">
 			</div>
@@ -78,6 +89,15 @@
         function w3_close() {
             document.getElementById("mySidenav").style.display = "none";
         }
+        
+        function myFunction() {
+			var x = document.getElementById("demo");
+			if (x.className.indexOf("w3-show") == -1) {
+				x.className += " w3-show";
+			} else { 
+				x.className = x.className.replace(" w3-show", "");
+			}
+		}
         </script>
 
     </body>
