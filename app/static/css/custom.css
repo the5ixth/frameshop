@@ -99,9 +99,17 @@ input[type=checkbox]:checked ~ #menu{
 		margin: 0;
 	}
 	.comment{
+		width: 500px;
 		text-align: center;
 		margin-left: auto;
 		margin-right: auto;
+	}
+	
+	.mobile-btn{
+		margin-left: 50%;
+	}
+	
+	.hed{
 	}
 	
 }
