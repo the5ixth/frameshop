@@ -1,5 +1,6 @@
 from flask import Blueprint, request, render_template, redirect, url_for, current_app
 from werkzeug.utils import secure_filename
+from random import randint
 from .models import Photo
 from .forms import UploadForm
 import time
@@ -12,9 +13,10 @@ main = Blueprint("main", __name__)
 	
 @main.route('/')
 def about():
-	photos = Photo.query.order_by(Photo.id.desc()).paginate(per_page=15, page=request.args.get("page", 1, type=int))
-	last_page = int(photos.total / 15 + 1)
-	return render_template('about.html', photos=photos, last_page=last_page)
+	count = Photo.query.count()
+	num = randint(1,count)
+	photo = Photo.query.get(num)
+	return render_template('about.html', photo=photo)
 	
 @main.route('/gallery/')
 def gallery():
