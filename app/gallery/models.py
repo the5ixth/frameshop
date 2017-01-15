@@ -31,3 +31,10 @@ def get_last():
 def count():
 	count = Photo.query.count()
 	return count
+
+def delete_image(imagenum):
+	Photo.query.filter(id=imagenum).delete()
+	
+def update_image(obj):
+	db.session.commit()
+	

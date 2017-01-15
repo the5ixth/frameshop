@@ -98,5 +98,10 @@ input[type=checkbox]:checked ~ #menu{
 	body{
 		margin: 0;
 	}
+	.comment{
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	
 }

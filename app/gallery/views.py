@@ -19,7 +19,8 @@ def about():
 @main.route('/gallery/')
 def gallery():
 	photos = Photo.query.order_by(Photo.id.desc()).paginate(per_page=15, page=request.args.get("page", 1, type=int))
-	return render_template('about.html', photos=photos)	
+	last_page = int(photos.total / 15 + 1)
+	return render_template('gallery.html', photos=photos, last_page=last_page)	
 
 @main.route('/gallery/image/<int:num>')
 def view(num):

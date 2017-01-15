@@ -2,80 +2,28 @@
 
 
 {%  block body %}
-	
+	<!-- Header -->
+	<header class="w3-container w3-red w3-center w3-padding-128">
+		<h1 class="w3-margin w3-xxlarge logger text-right">GENESIS FRAME SHOP</h1>
+		<p class="w3-xlarge logger text-right">AND GALLERY LLC</p>
+		<button class="w3-btn w3-padding-16 w3-large w3-margin-top">Go to the Gallery</button>
+	</header>
 
-    <!-- Header -->
-    <header>
-      <!-- <span class="w3-opennav w3-xxlarge w3-right w3-margin-right" onclick="w3_open()"><i class="fa fa-bars"></i></span> -->
-      <h1 class='banner logger'>GENESIS FRAME SHOP</h1>
-    </header>
-    
-	<div class="w3-row" id="myGrid" style="margin-bottom:128px">
-	 	<div class="w3-card-4 c-card">
-	 		<header class='W3-container'>
-	 			<h1 class='card-header'> </h1>
-	 		</header>
-	 		<div class='w3-container'>
+	<!-- First Grid -->
+	<div class="w3-row-padding w3-padding-64 w3-container">
+		<div class="w3-content">
+			<div class="w3-twothird">
+				<h1 class="logger">GENESIS FRAME SHOP AND GALLERY</h1>
+				<h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+
+				<p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+		    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+		    laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+
+			<div class="w3-third w3-center">
+				<i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
 			</div>
 		</div>
-		<br />
-	</div>
-	<div class="w3-row" id="myGrid" style="margin-bottom:128px">
-
-		<div class="w3-third">
-		{% for photo in photos.items[0::3] %}
- 			<a href="/gallery/image/{{photo.id}}">
-				<img src="{{ url_for('static', filename='images/'+photo.imgfilename)}}" style="width:100%">
-			</a>
-		{% endfor %}
-		</div>
-		<div class="w3-third">
-		{% for photo in photos.items[1::3] %}
- 			<a href="/gallery/image/{{photo.id}}">
-				<img src="{{ url_for('static', filename='images/'+photo.imgfilename)}}" style="width:100%">
-			</a>
-		{% endfor %}
-		</div>
-		<div class="w3-third">
-		{% for photo in photos.items[2::3] %}
- 			<a href="/gallery/image/{{photo.id}}">
-				<img src="{{ url_for('static', filename='images/'+photo.imgfilename)}}" style="width:100%">
-			</a>
-		{% endfor %}
-		</div>
-	
-	</div>
-	<div class="w3-container">
-		<div class=" btn-center">
-			<a href="{{ url_for('main.about') }}">
-				<button class="w3-btn w3-hover-white" ><i class="fa fa-arrow-left"></i></button>
-			</a>
-			{% if photos.prev_num -1 > 0 %}
-				<a href="{{ url_for('main.about', page=photos.prev_num-1) }}">
-					<button class="w3-btn  w3-hover-white" >{{ photos.prev_num - 1 }}</button>
-				</a>
-			{% endif %}
-			{% if photos.has_prev %}
-				<a href="{{ url_for('main.about', page=photos.prev_num) }}">
-					<button class="w3-btn w3-hover-white" >{{ photos.prev_num }}</button>
-				</a>
-			{% endif %}
-			<a href="{{ url_for('main.about', page=photos.page) }}">
-				<button class="w3-btn w3-teal w3-hover-white" >{{ photos.page }}</button>
-			</a>
-			{% if photos.has_next %}
-				<a href="{{ url_for('main.about', page=photos.next_num) }}">
-					<button class="w3-btn  w3-hover-white" >{{ photos.next_num }}</button>
-				</a>
-			{% endif %}
-			{% if photos.next_num + 1 <= photos.pages %}
-				<a href="{{ url_for('main.about', page=photos.next_num+1) }}">
-					<button class="w3-btn w3-hover-white" >{{ photos.next_num + 1 }}</button>
-				</a>
-			{% endif %}
-			<a href="{{ url_for('main.about', page=last_page) }}">
-				<button class="w3-btn w3-hover-white" ><i class="fa fa-arrow-right"></i></button>
-			</a>
-		</div> 
 	</div>
 {% endblock %}
