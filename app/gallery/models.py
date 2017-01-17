@@ -11,6 +11,8 @@ class Photo(db.Model):
 	artist = db.Column(db.String(50), default="")
 	
 	
+
+	
 def get_page(pagenum):
 
 	return photos

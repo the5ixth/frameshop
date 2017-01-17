@@ -9,7 +9,6 @@ import os
 from .. import db
 
 main = Blueprint("main", __name__)
-		
 	
 @main.route('/')
 def about():
@@ -28,7 +27,7 @@ def gallery():
 def view(num):
 	photo = Photo.query.get(num)
 	return render_template('view.html', photo=photo)
-
+	
 @main.route('/upload', methods=['GET', 'POST'])
 def upload():
 	form = UploadForm()
@@ -43,7 +42,6 @@ def upload():
 		db.session.commit()
 		return redirect(url_for("main.about"))
 	return render_template("upload.html", form=form)
-		
-		
-		
+	
+
 

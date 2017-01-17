@@ -103,7 +103,7 @@ input[type=checkbox]:checked ~ #menu{
 	}
 	
 	body{
-		margin: 0;
+		margin-top: 50px;
 	}
 	.comment{
 		width: 100%;
