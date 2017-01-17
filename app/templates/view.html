@@ -20,9 +20,19 @@
 		</div>
 		<br />
 		<div class="btn-center">
+			{% if auth: %}
+			<a href="/delete/image/{{photo.id}}">
+				<button class="w3-btn w3-round-xlarge w3-hover-red">Delete</button>
+			</a>
+			{% endif %}
 			<a href="/">
 				<button class="w3-btn w3-round-xlarge w3-hover-white">Back to Gallery</button>
 			</a>
+			{% if auth: %}
+			<a href="/edit/image/{{photo.id}}">
+				<button class="w3-btn w3-round-xlarge w3-hover-blue">Edit</button>
+			</a>
+			{% endif %}
 		</div> 
 	</div>
 {% endblock %}

@@ -3,10 +3,10 @@
 
 {%  block body %}
 	<div class="w3-card-4 c-card">
-		<div class="w3-container w3-green">
-		  	<h2>Login`</h2>
+		<div class="w3-container w3-brown">
+		  	<h2>Login</h2>
 		</div>
-		<form class="w3-container" method='POST' action='/upload' enctype="multipart/form-data">
+		<form class="w3-container" method='POST' action='/login' enctype="multipart/form-data">
 			<dl>
 				{{ form.csrf_token() }}
 				{{ render_field(form.email) }}
