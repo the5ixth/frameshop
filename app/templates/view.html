@@ -44,7 +44,7 @@
 				<button class="w3-btn w3-round-xlarge w3-hover-red">Delete</button>
 			</a>
 			{% endif %}
-			<a href="/">
+			<a href="{{ url_for('main.gallery') }}">
 				<button class="w3-btn w3-round-xlarge w3-hover-white">Back to Gallery</button>
 			</a>
 			{% if auth: %}

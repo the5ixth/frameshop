@@ -95,17 +95,10 @@ def upload():
 @auth_flask_login.route('/delete/image/<int:num>')
 @login_required
 def delete(num):
-	auth = False
-	if current_user.is_authenticated:
-		auth = True
-	form = UploadForm()
-	if form.validate_on_submit():
-		ph = Photo()
-		form.populate_obj(ph)
-		db.session.add(ph)
-		db.session.commit()
-		return redirect(url_for("main.about"))
-	return render_template("upload.html", form=form, auth=auth)
+	ph = Photo.query.get(num)
+	db.session.delete(ph)
+	db.session.commit()
+	return redirect(url_for('main.about'))
 
 
 @auth_flask_login.route('/edit/image/<int:num>', methods={'GET','POST'})
