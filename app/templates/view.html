@@ -26,10 +26,12 @@
 							</div>
 						{% endif %}
 					{% elif photo.price != 0: %}
+						<hr>
 						<div class="centered">
 						<p><b> Sold for:</b> ${{photo.price}}</p>
-						</div>\
+						</div>
 					{% elif photo.artist: %}
+						<hr>
 						<div class="centered">
 						<p><b> Artist: </b>{{photo.artist}}</p>
 						</div>
