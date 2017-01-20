@@ -9,8 +9,20 @@
 		<form class="w3-container" method='POST' action='/login' enctype="multipart/form-data">
 			<dl>
 				{{ form.csrf_token() }}
-				{{ render_field(form.email) }}
-				{{ render_field(form.password) }}
+				<dt>
+					<label for="email">Email Address: </label>
+				</dt>
+				<dd>
+					<label for="email">Email Address: </label>
+					<input id="email" name="email" value="" type="text">
+				</dd>
+				<dt>
+					<label for="password">Password: </label>
+				</dt>
+				<dd>
+					<label for="password">Password: </label>
+					<input id="password" name="password" value="" type="password">
+				</dd>
 				
 			</dl>
 			{{ render_field(form.submit) }}

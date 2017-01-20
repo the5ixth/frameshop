@@ -6,21 +6,52 @@
 		<div class="w3-container w3-green">
 		  	<h2>Edit an Image</h2>
 		</div>
-		<h2>{{ photo.title }}</h2>
-		<p>{{ photo.comment }}</p>
-		<p>{{ photo.price }}</p>
-		<p>{{ photo.artist }}</p> <br />
-		<form class="w3-container" method='POST' action="/edit/image/{{ photo.id }}" enctype="multipart/form-data">
+		<form class="w3-container" method='POST' action='/upload' enctype="multipart/form-data">
 			<dl>
 				{{ form.csrf_token() }}
-				{{ render_field(form.title) }}
-				{{ render_field(form.comment) }}
-				{{ render_field(form.price) }}
-				{{ render_field(form.artist) }}
-				
+				<dt>
+					<label for="title">Title:</label>
+				</dt>
+				<dd>
+					<label for="title">Title:</label>
+					<input id="title" name="title" value="{{ photo.title }}" type="text">
+				</dd>
+				<dt>
+					<label for="comment">Comment:</label>
+				</dt>
+				<dd>
+					<label for="comment">Comment:</label>
+					<textarea id="comment" name="comment" value="" type="text">{{ photo.comment }}</textarea>
+				</dd>
+				<dt>
+					<label for="price">Price:</label>
+					<p>(if you want the price to be blank enter 0)</p>
+				</dt>
+				<dd>
+					<label for="price">Price:</label>
+					<p>(if you want the price to be blank enter 0)</p>
+					<input id="price" name="price" value="{{ photo.price }}" type="text">
+				</dd>
+				<dt>
+					<label for="artist">Artist:</label>
+					<p>(if you want the artist to be blank leave it empty)</p>
+				</dt>
+				<dd>
+					<label for="artist">Artist:</label>
+					<p>(if you want the artist to be blank leave it empty)</p>
+					<input id="artist" name="artist" value="{{ photo.artist }}" type="text">
+				</dd>				
 			</dl>
-			{{ render_field(form.submit) }}
+			<dd>
+				<input id="submit" name="submit" value="Submit" type="submit">
+			</dd>
 		</form>
+		<hr>
+		<div class="centered">
+			<a href="/delete/image/{{photo.id}}">
+				<button class="w3-btn w3-round-xlarge w3-hover-red">Delete</button>
+			</a>
+		</div>
 	</div>
 
 {% endblock %}

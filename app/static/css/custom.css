@@ -4,13 +4,21 @@
 }
 
 body {
-	margin-top: 50px;
+	margin-top: 40.5px;
     background: url("bg-9-full.jpg");
     background-size: cover;
 }
 
+.pdtop{
+    padding-top: 10px;
+    padding-bottom: 10px;}
+
 .logger{
 	font-family: Logger;
+}
+
+.centered{
+    text-align: center;
 }
 
 .banner{
@@ -30,19 +38,17 @@ body {
 	margin-bottom: 0px;
 }
 
-.card-header{
-	text-align: center;
-}
-
-.btn-center{
-	text-align: center;
-}
 .btn-grp{
 	margin: auto;
 }
 .c-card{
 	background: white;
+	padding-bottom: 20px;
 }
+.g-card{
+    background: grey;
+    padding-bottom: 20px;
+   }
 .w3-opennav, .w3-closenav{
 	color: white;
 }
@@ -54,6 +60,12 @@ body {
 	text-align: left;
 }
 
+.image{
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .comment{
 	text-align: center;
 	width: 600px;
@@ -77,6 +89,8 @@ input[type=checkbox]{
     display: none;
 }
 
+
+
 /*Show menu when invisible checkbox is checked*/
 input[type=checkbox]:checked ~ #menu{
     display: block;
@@ -86,12 +100,61 @@ input[type=checkbox]:checked ~ #menu{
 	display: none;
 }
 
-.rand-image{
-	height: 100%;
-	width: 100%;
-	margin-top: auto;
-	margin-bottom: auto;
+input[type=text] {
+    width: 100%;
+     border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+
 }
+input[type=password] {
+    width: 100%;
+     border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+
+}
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    width: 100%;
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type=button], input[type=file], input[type=reset] {
+    width: 100%;
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+dt{
+    display: none;
+}
+
+dl p{
+    margin: 0px;
+}
+dd{
+    margin-left: 0px;
+}
+
 
 @media screen and (max-width: 760px){
 	.topnav li{

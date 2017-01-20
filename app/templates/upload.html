@@ -9,16 +9,44 @@
 		<form class="w3-container" method='POST' action='/upload' enctype="multipart/form-data">
 			<dl>
 				{{ form.csrf_token() }}
-				{{ render_field(form.title) }}
+				<dt>
+					<label for="title">Title:</label>
+				</dt>
+				<dd>
+					<label for="title">Title:</label>
+					<input id="title" name="title" value="" type="text">
+				</dd>
+				<br>
 				{{ render_field(form.imgfile) }}
-				{{ render_field(form.comment) }}
-				{{ render_field(form.price) }}
-				<p>(If you don't want to show a price field enter 0)</p>
-				{{ render_field(form.artist) }}
-				<p>(If you don't want to show an Artist Name leave blak</p>
-				
+				<dt>
+					<label for="comment">Comment:</label>
+				</dt>
+				<dd>
+					<label for="comment">Comment:</label>
+					<textarea id="comment" name="comment" value="" type="text"></textarea>
+				</dd>
+				<dt>
+					<label for="price">Price:</label>
+					<p>(if you want the price to be blank enter 0)</p>
+				</dt>
+				<dd>
+					<label for="price">Price:</label>
+					<p>(if you want the price to be blank enter 0)</p>
+					<input id="price" name="price" value="" type="text">
+				</dd>
+				<dt>
+					<label for="artist">Artist:</label>
+					<p>(if you want the artist to be blank leave it empty)</p>
+				</dt>
+				<dd>
+					<label for="artist">Artist:</label>
+					<p>(if you want the artist to be blank leave it empty)</p>
+					<input id="artist" name="artist" value="" type="text">
+				</dd>				
 			</dl>
-			{{ render_field(form.submit) }}
+			<dd>
+				<input id="submit" name="submit" value="Submit" type="submit">
+			</dd>
 		</form>
 	</div>
 {% endblock %}
