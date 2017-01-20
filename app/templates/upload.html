@@ -6,7 +6,7 @@
 		<div class="w3-container w3-brown">
 		  	<h2>Upload an Image</h2>
 		</div>
-		<form class="w3-container" method='POST' action='/upload' enctype="multipart/form-data">
+		<form class="w3-container block-center" method='POST' action='/upload' enctype="multipart/form-data" style="max-width: 600px;">
 			<dl>
 				{{ form.csrf_token() }}
 				<dt>

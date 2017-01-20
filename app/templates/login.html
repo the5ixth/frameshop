@@ -6,20 +6,20 @@
 		<div class="w3-container w3-brown">
 		  	<h2>Login</h2>
 		</div>
-		<form class="w3-container" method='POST' action='/login' enctype="multipart/form-data">
+		<form class="w3-container block-center" method='POST' action='/login' enctype="multipart/form-data" style=" max-width: 600px;">
 			<dl>
 				{{ form.csrf_token() }}
 				<dt>
 					<label for="email">Email Address: </label>
 				</dt>
-				<dd>
+				<dd class="">
 					<label for="email">Email Address: </label>
 					<input id="email" name="email" value="" type="text">
 				</dd>
 				<dt>
 					<label for="password">Password: </label>
 				</dt>
-				<dd>
+				<dd class="">
 					<label for="password">Password: </label>
 					<input id="password" name="password" value="" type="password">
 				</dd>

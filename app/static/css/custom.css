@@ -55,6 +55,12 @@ body {
 	color: white;
 }
 
+.block-center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .text-right{
 	text-align: right;
 }
@@ -111,7 +117,7 @@ input[type=text] {
 }
 input[type=password] {
     width: 100%;
-     border: 2px solid #ccc;
+     border: 2px solid #ccc;git
     border-radius: 4px;
     background-color: #f8f8f8;
 
