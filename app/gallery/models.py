@@ -42,30 +42,3 @@ class User(db.Model):
 
 
 	
-def get_page(pagenum):
-
-	return photos
-	
-def get_image(imagenum):
-	image = Photo.query.filter_by(id=imagenum).first()
-	return image
-
-def insert(obj):
-	db.session.add(obj)
-	db.session.commit()	
-	return 0
-
-def get_last():
-	last = Photo.query.order_by(Photo.id.desc()).first()
-	return last.id
-	
-def count():
-	count = Photo.query.count()
-	return count
-
-def delete_image(imagenum):
-	Photo.query.filter(id=imagenum).delete()
-	
-def update_image(obj):
-	db.session.commit()
-	

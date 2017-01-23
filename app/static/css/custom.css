@@ -32,6 +32,10 @@ body {
 	opacity: 0.60;
 }
 
+.thumb:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
 .info p{
 	font-size: 18px;
 	margin-top: 0px;
