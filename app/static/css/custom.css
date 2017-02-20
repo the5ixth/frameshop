@@ -4,9 +4,20 @@
 }
 
 body {
-	margin-top: 40.5px;
+	margin-top: 60px;;
     background: url("bg-9-full.jpg");
     background-size: cover;
+}
+
+#gallhead {
+	background-color: #c5c5c5;
+}
+
+.content {
+  min-height: calc(100vh - 386px);
+}
+.footer {
+  height: 236px;
 }
 
 .pdtop{
@@ -21,6 +32,12 @@ body {
     text-align: center;
 }
 
+.center{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 .banner{
 	text-align: center;
 	padding-top: 20px;
@@ -30,6 +47,10 @@ body {
 	background: white;
 	border-radius: 15px;
 	opacity: 0.60;
+}
+
+.container{
+	max-width:1000px;
 }
 
 .thumb:hover{

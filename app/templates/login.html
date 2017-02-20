@@ -2,8 +2,9 @@
 {% from "macros.html" import render_field %}
 
 {%  block body %}
-	<div class="w3-card-4 c-card">
-		<div class="w3-container w3-brown">
+<div class="w3-content" style="max-width:1000px">
+	<div class="w3-card-4 c-card ">
+		<div class="w3-container" id="gallhead">
 		  	<h2>Login</h2>
 		</div>
 		<form class="w3-container block-center" method='POST' action='/login' enctype="multipart/form-data" style=" max-width: 600px;">
@@ -28,4 +29,5 @@
 			{{ render_field(form.submit) }}
 		</form>
 	</div>
+</div>
 {% endblock %}

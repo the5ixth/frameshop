@@ -1,40 +1,26 @@
 from flask import Blueprint, request, render_template, redirect, url_for, current_app
 from flask_login import current_user
-from random import randint
-from .models import Photo, User
-import time
-import os
-
-from .. import db
+from .models import Photo
+from sqlalchemy.sql.expression import func
 
 main = Blueprint("main", __name__)
 
-
+user = current_user
 
 @main.route('/')
 def about():
-	auth=False
-	count = Photo.query.count()
-	if current_user.is_authenticated:
-		auth = True
-	return render_template('about.html', auth=auth)
-	
+    photo = Photo.query.order_by(func.rand()).first()
+    return render_template('about.html', photo=photo, user=user)
+
+
 @main.route('/gallery/')
 def gallery():
-	auth=False
-	if current_user.is_authenticated:
-		auth = True
-	photos = Photo.query.order_by(Photo.id.desc()).paginate(per_page=15, page=request.args.get("page", 1, type=int))
-	last_page = int(photos.total / 15 + 1)
-	return render_template('gallery.html', photos=photos, last_page=last_page, auth=auth)
+    photos = Photo.query.order_by(Photo.id.desc()).paginate(per_page=15, page=request.args.get("page", 1, type=int))
+    last_page = int(photos.total / 15 + 1)
+    return render_template('gallery.html', photos=photos, last_page=last_page, user=user)
+
 
 @main.route('/gallery/image/<int:num>')
-def view(num):
-	auth = False
-	if current_user.is_authenticated:
-		auth = True
-	photo = Photo.query.get(num)
-	return render_template('view.html', photo=photo, auth=auth)
-	
-
-
+def view(num):  
+    photo = Photo.query.get(num)
+    return render_template('view.html', photo=photo, user=user)

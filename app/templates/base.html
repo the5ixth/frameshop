@@ -17,55 +17,41 @@
         .w3-row-padding img {margin-bottom: 12px}t
     </style>
     <body><?php include_once("analyticstracking.php") ?>
-    	<ul class="w3-navbar w3-border w3-light-grey w3-top mobile">
-    		<li class="w3-dropdown-click ">
-    			<a onclick="myFunction()" href="javascript:void(0)">
-    				<span class="hed logger">GENESIS FRAME SHOP</span>
-    				<span class="obj-right mobile-btn"><i class="fa fa-bars "></i></span>
-    			</a>
-				<div id="demo" class="w3-dropdown-content w3-border">
-					<a class="w3-hover-grey" href="{{ url_for( 'main.about' ) }}">Home</a>
-					<a class="w3-hover-grey" href="{{ url_for( 'main.gallery' ) }}">Gallery</a>
-					{% if auth == True: %}
-						<a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.upload' ) }}">Upload</a>
-						<a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.logout' ) }}">Logout</a>
-					{% endif %}
-				</div>
-			</li>
-		</ul>
+    	<div class="content">
+			<ul class="w3-navbar w3-border w3-light-grey w3-top mobile">
+				<li class="w3-dropdown-click ">
+					<a onclick="myFunction()" href="javascript:void(0)">
+						<span class="hed logger">GENESIS FRAME SHOP</span>
+						<span class="obj-right mobile-btn"><i class="fa fa-bars "></i></span>
+					</a>
+					<div id="demo" class="w3-dropdown-content w3-border">
+						<a class="w3-hover-grey" href="{{ url_for( 'main.about' ) }}">Home</a>
+						<a class="w3-hover-grey" href="{{ url_for( 'main.gallery' ) }}">Gallery</a>
+						{% if user.authenticated: %}
+							<a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.upload' ) }}">Upload</a>
+							<a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.logout' ) }}">Logout</a>
+						{% endif %}
+					</div>
+				</li>
+			</ul>
 
-		<ul class="w3-navbar w3-border w3-light-grey w3-top topnav">
-			<li><a class="logger" href="/">GENESIS FRAME SHOP</a></li>
-			<li><a class="w3-hover-grey" href="/">Home</a></li>
-			<li><a class="w3-hover-grey" href="{{ url_for( 'main.gallery' ) }}">Gallery</a></li>
-			{% if auth == True: %}
-				<li class="w3-right"><a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.upload' ) }}">Upload</a></li>
-				<li class="w3-right"><a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.logout' ) }}">Logout</a></li>
-			{% endif %}
-		</ul>
-        <!-- Sidenav 
-        <nav class="w3-sidenav w3-black w3-animate-top w3-center w3-xxlarge" style="display:none;padding-top:150px" id="mySidenav">
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-jumbo w3-display-topright" style="padding:6px 24px">
-                <i class="fa fa-remove"></i>
-            </a>
-            <a href="/" class="w3-text-grey w3-hover-black">About</a>
-            <a href="/gallery" class="w3-text-grey w3-hover-black">Photos</a>
-            <a href="/contact" class="w3-text-grey w3-hover-black">Contact</a>
-            <a href="/upload" class="w3-text-grey w3-hover-black">Upload</a>
-        </nav>
-		-->
-		
-        <!-- !PAGE CONTENT! -->
-        
-        <div class="w3-content" style="max-width:1000px">
-
-        {% block body %}
-        {% endblock %}
+			<ul class="w3-navbar w3-border w3-light-grey w3-top topnav">
+				<li><a class="logger" href="/">GENESIS FRAME SHOP</a></li>
+				<li><a class="w3-hover-grey" href="/">Home</a></li>
+				<li><a class="w3-hover-grey" href="{{ url_for( 'main.gallery' ) }}">Gallery</a></li>
+				{% if user.authenticated: %}
+					<li class="w3-right"><a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.logout' ) }}">Logout</a></li>
+					<li class="w3-right"><a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.upload' ) }}">Upload</a></li>
+				{% endif %}
+			</ul>
+	   
+		    {% block body %}
+		    {% endblock %}
 
 		</div>
 		
         <!-- Footer -->
-        <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge w3 row" style="margin-top:128px"> 
+        <footer class="footer w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge w3 row" style="margin-top: 150px;"> 
         	<div class="w3-col s12 m4 l3 text-left info">
         		<p> Ken "Rosy" Rosenbaum</p>
         		<p> 900 Ray Rd Helena, MT </p>
@@ -76,10 +62,6 @@
 		        <a href='https://www.facebook.com/pages/Genesis-Frame-Shop-Gallery/1501648950127464'>
 		            <i class="fa fa-facebook-official w3-hover-text-indigo"></i>
 		        </a>
-		        <!--  <i class="fa fa-instagram w3-hover-text-purple"></i> -->
-		        <!--  <i class="fa fa-snapchat w3-hover-text-yellow"></i>-->
-		        <!--  <i class="fa fa-pinterest-p w3-hover-text-red"></i>-->
-		        <!--  <i class="fa fa-twitter w3-hover-text-light-blue"></i>-->
 				<i class="fa fa-linkedin w3-hover-text-blue"></i>
 			</div>
 			</div class="w3-col s12 m4 l3">

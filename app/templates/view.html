@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block body %}
-
-	<div class="w3-row" id="myGrid" style="margin-bottom:128px">
+<div class="w3-content" style="max-width:1000px">
+	<div class="w3-row " id="myGrid" style="margin-bottom:128px">
 	 	<div class="w3-card-4 c-card">
 	 		<header class='W3-container'>
 	 			<hr>
@@ -42,7 +42,7 @@
 		</div>
 		<br />
 		<div class="centered">
-			{% if auth: %}
+			{% if user.authenticated: %}
 			<a href="/delete/image/{{photo.id}}">
 				<button class="w3-btn w3-round-xlarge w3-hover-red">Delete</button>
 			</a>
@@ -50,12 +50,13 @@
 			<a href="{{ url_for('main.gallery') }}">
 				<button class="w3-btn w3-round-xlarge w3-hover-white">Back to Gallery</button>
 			</a>
-			{% if auth: %}
+			{% if user.authenticated: %} 
 			<a href="/edit/image/{{photo.id}}">
 				<button class="w3-btn w3-round-xlarge w3-hover-blue">Edit</button>
 			</a>
 			{% endif %}
 		</div> 
 	</div>
+</div>
 {% endblock %}
 
