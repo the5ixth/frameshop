@@ -8,7 +8,7 @@
 		<div class="w3-container" id="gallhead">
 		  	<h2>Edit an Image</h2>
 		</div>
-		<form class="w3-container block-center" method='POST' action='/upload' enctype="multipart/form-data" style="max-width: 600px;">
+		<form class="w3-container block-center" method='POST' action='/edit/image/{{photo.id}}' enctype="multipart/form-data" style="max-width: 600px;">
 			<dl>
 				{{ form.csrf_token() }}
 				<dt>

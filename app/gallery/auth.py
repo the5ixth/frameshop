@@ -100,7 +100,7 @@ def delete(num):
 def edit(num):
     photo = Photo.query.get(num)
     form = EditForm()
-    if form.validate_on_submit():
+    if request.method=="POST":
         ph = Photo().query.get(num)
         form.populate_obj(ph)
         db.session.add(ph)
