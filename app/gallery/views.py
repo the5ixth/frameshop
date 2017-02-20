@@ -21,6 +21,6 @@ def gallery():
 
 
 @main.route('/gallery/image/<int:num>')
-def view(num):  
+def view(num):
     photo = Photo.query.get(num)
     return render_template('view.html', photo=photo, user=user)
