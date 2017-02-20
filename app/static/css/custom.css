@@ -133,7 +133,7 @@ input[type=checkbox]:checked ~ #menu{
 	display: none;
 }
 
-input[type=text] {
+input[type=text], input[type=email] {
     width: 100%;
      border: 2px solid #ccc;
     border-radius: 4px;
