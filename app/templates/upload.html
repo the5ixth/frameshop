@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 {% from "macros.html" import render_field %}
 
+
 {%  block body %}
 <div class="w3-content" style="max-width:1000px">
 	<div class="w3-card-4 c-card ">
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <P>{{ message }}</p>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
 		<div class="w3-container" id="gallhead">
 		  	<h2>Upload an Image</h2>
 		</div>

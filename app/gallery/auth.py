@@ -15,18 +15,18 @@ user = current_user
 auth_flask_login = Blueprint('auth_flask_login', __name__, template_folder='templates')
 
 
-@auth_flask_login.route('/register', methods=["GET", "POST"])
-def register():
-    form = SignupForm()
-    if form.validate_on_submit():
-        userdb = User()
-        form.populate_obj(userdb)
-        pw_hash = bcrypt.generate_password_hash(form.password.data)
-        userdb.password = pw_hash
-        db.session.add(userdb)
-        db.session.commit()
-        return redirect(url_for('auth_flask_login.login'))
-    return render_template('register.html', form=form, user=user)
+#@auth_flask_login.route('/register', methods=["GET", "POST"])
+#def register():
+#    form = SignupForm()
+#    if form.validate_on_submit():
+#        userdb = User()
+#        form.populate_obj(userdb)
+#        pw_hash = bcrypt.generate_password_hash(form.password.data)
+#        userdb.password = pw_hash
+#        db.session.add(userdb)
+#        db.session.commit()
+#        return redirect(url_for('auth_flask_login.login'))
+#    return render_template('register.html', form=form, user=user)
 
 
 @auth_flask_login.route("/login", methods=["GET", "POST"])
@@ -40,6 +40,7 @@ def login():
                 db.session.add(usr)
                 db.session.commit()
                 login_user(usr, remember=True)
+                flash('You were successfully logged in')
                 return redirect(url_for('auth_flask_login.upload'))
     return render_template("login.html", form=form, user=user)
 
@@ -82,6 +83,7 @@ def upload():
                                             filename))
         db.session.add(ph)
         db.session.commit()
+        flash('Upload Successfull')
         return redirect(url_for("auth_flask_login.upload"))
     return render_template("upload.html", form=form, user=user)
 
@@ -100,7 +102,7 @@ def delete(num):
 def edit(num):
     photo = Photo.query.get(num)
     form = EditForm()
-    if request.method == "POST":
+    if form.validate_on_submit():
         ph = Photo().query.get(num)
         form.populate_obj(ph)
         db.session.add(ph)
