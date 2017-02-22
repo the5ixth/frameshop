@@ -2,14 +2,22 @@ from .. import db
 
 
 class Photo(db.Model):
-	__tablename__='photos'
-	id = db.Column(db.Integer, primary_key=True)
-	imgfilename = db.Column(db.String(128))
-	title = db.Column(db.String(50))
-	comment = db.Column(db.Text)
-	price = db.Column(db.Integer, default=0)
-	artist = db.Column(db.String(50), default="")
-	
+    __tablename__ = 'photos'
+    id = db.Column(db.Integer, primary_key=True)
+    imgfilename = db.Column(db.String(128))
+    title = db.Column(db.String(50))
+    comment = db.Column(db.Text)
+    price = db.Column(db.Integer, default=0)
+    artist = db.Column(db.String(50), default="")
+
+class Blog(db.Model):
+    __tablename__ = 'blog'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100))
+    body = db.Column(db.Text)
+    date = db.Column(db.String(50))
+
+
 class User(db.Model):
     """An admin user capable of viewing reports.
 

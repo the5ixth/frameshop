@@ -34,3 +34,8 @@ class EditForm(FlaskForm):
     price = IntegerField('Price :', validators=[])
     artist = StringField('Artist: ', validators=[])
     submit = SubmitField("Submit")
+
+#class BlogForm(FlaskForm):
+#    title = StringField('Title: ', validators=[DataRequired()])
+#    body = TextAreaField('Body: ', validators=[DataRequired()])
+#    submit = SubmitField('Submit')

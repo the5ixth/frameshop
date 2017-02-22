@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% from "macros.html" import render_field %}
+
+{%  block body %}
+<div class="w3-content" style="max-width:1000px">
+	<div class="w3-card-4 c-card ">
+		<div class="w3-container" id="gallhead">
+		  	<h2>Upload Some News</h2>
+		</div>
+		<form class="w3-container block-center" method='POST' action='/blog' enctype="multipart/form-data" style="max-width: 600px;">
+			<dl>
+				{{ form.csrf_token() }}
+				
+				{{ render_field(form.title) }}
+				{{ render_field(form.body) }}
+				</dd>				
+			</dl>
+			<dd>
+				<input id="submit" name="submit" value="Submit" type="submit">
+			</dd>
+		</form>
+	</div>
+</div>
+{% endblock %}

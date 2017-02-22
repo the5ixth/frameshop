@@ -100,10 +100,36 @@ def delete(num):
 def edit(num):
     photo = Photo.query.get(num)
     form = EditForm()
-    if request.method=="POST":
+    if request.method == "POST":
         ph = Photo().query.get(num)
         form.populate_obj(ph)
         db.session.add(ph)
         db.session.commit()
         return redirect(url_for("main.about"))
     return render_template("edit.html", photo=photo, form=form, user=user)
+
+
+#@auth_flask_login.route('/blog', methods=['GET', 'POST'])
+#@login_required
+#def blog():
+#    form = BlogForm()
+#    if form.validate_on_submit():
+#        bl = Blog()
+#        form.populate_obj(bl)
+#        bl.date = time.strftime("%y%j%H%m%S")
+#        db.session.add(bl)
+#        db.session.commit()
+#        return redirect(url_for('main.about'))
+#    return render_template('blog.html', form=form, user=user)
+
+
+#@auth_flask_login.route('/edit/blog/<int:num>', methods=["GET", "POST"])
+#@login_required
+#def edit_blog(num):
+#    bl = Blog.query.get(num)
+#    form = BlogForm()
+#    if form.validate_on_submit():
+#        form.populate_obj(bl)
+#        db.session.add(bl)
+#        db.session.commit()
+#    return render_template('editBlog.html', blog=bl, form=form, user=user)

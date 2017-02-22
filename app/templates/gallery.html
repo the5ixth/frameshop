@@ -50,7 +50,7 @@
 					</a>
 				{% endif %}
 				<a href="{{ url_for('main.gallery', page=photos.page) }}">
-					<button class="w3-btn w3-teal w3-hover-white" >{{ photos.page }}</button>
+					<button class="w3-btn w3-red w3-hover-white" >{{ photos.page }}</button>
 				</a>
 				{% if photos.has_next %}
 					<a href="{{ url_for('main.gallery', page=photos.next_num) }}">
