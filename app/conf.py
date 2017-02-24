@@ -23,3 +23,5 @@ class ProdConfig(DevConfig):
 
 config_types = {'dev': DevConfig,
                 'prod': ProdConfig}
+
+#mysql+mysqldb://<user>:<password>@<host>[:<port>]/<dbname>
