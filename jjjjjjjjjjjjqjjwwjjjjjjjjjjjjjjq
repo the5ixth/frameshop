@@ -1,0 +1,244 @@
+============= i-0bd720e4975ef9ae7 ==============
+-------------------------------------
+/var/log/httpd/error_log
+-------------------------------------
+[Fri Feb 24 05:01:02.092189 2017] [auth_digest:notice] [pid 2827] AH01757: generating secret for digest authentication ...
+[Fri Feb 24 05:01:02.092882 2017] [lbmethod_heartbeat:notice] [pid 2827] AH02282: No slotmem from mod_heartmonitor
+[Fri Feb 24 05:01:02.092936 2017] [:warn] [pid 2827] mod_wsgi: Compiled for Python/2.7.10.
+[Fri Feb 24 05:01:02.092940 2017] [:warn] [pid 2827] mod_wsgi: Runtime using Python/2.7.12.
+[Fri Feb 24 05:01:02.094584 2017] [mpm_prefork:notice] [pid 2827] AH00163: Apache/2.4.25 (Amazon) mod_wsgi/3.5 Python/2.7.12 configured -- resuming normal operations
+[Fri Feb 24 05:01:02.094599 2017] [core:notice] [pid 2827] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+
+
+
+-------------------------------------
+/opt/python/log/supervisord.log
+-------------------------------------
+2017-02-23 08:23:00,014 CRIT Supervisor running as root (no user in config file)
+2017-02-23 08:23:00,029 INFO RPC interface 'supervisor' initialized
+2017-02-23 08:23:00,029 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2017-02-23 08:23:00,029 INFO supervisord started with pid 2808
+2017-02-23 08:23:01,649 INFO spawned: 'httpd' with pid 2827
+2017-02-23 08:23:02,747 INFO success: httpd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+
+
+
+-------------------------------------
+/var/log/httpd/access_log
+-------------------------------------
+
+
+
+
+-------------------------------------
+/var/log/eb-activity.log
+-------------------------------------
+      c/_cffi_backend.c:4784: error: ‘cif_description_t’ has no member named ‘exchange_offset_arg’
+      c/_cffi_backend.c:4793: error: ‘cif_description_t’ has no member named ‘exchange_size’
+      c/_cffi_backend.c: In function ‘fb_build_name’:
+      c/_cffi_backend.c:4817: error: ‘struct funcbuilder_s’ has no member named ‘nargs’
+      c/_cffi_backend.c:4829: error: ‘struct funcbuilder_s’ has no member named ‘fct’
+      c/_cffi_backend.c:4832: error: ‘struct funcbuilder_s’ has no member named ‘fct’
+      c/_cffi_backend.c: In function ‘fb_prepare_ctype’:
+      c/_cffi_backend.c:4876: error: ‘struct funcbuilder_s’ has no member named ‘fct’
+      c/_cffi_backend.c:4893: error: ‘struct funcbuilder_s’ has no member named ‘fct’
+      c/_cffi_backend.c: At top level:
+      c/_cffi_backend.c:4913: error: expected declaration specifiers or ‘...’ before ‘ffi_abi’
+      c/_cffi_backend.c: In function ‘fb_prepare_cif’:
+      c/_cffi_backend.c:4940: warning: implicit declaration of function ‘ffi_prep_cif’
+      c/_cffi_backend.c:4940: error: ‘cif_description_t’ has no member named ‘cif’
+      c/_cffi_backend.c:4940: error: ‘fabi’ undeclared (first use in this function)
+      c/_cffi_backend.c:4940: error: ‘struct funcbuilder_s’ has no member named ‘nargs’
+      c/_cffi_backend.c:4941: error: ‘struct funcbuilder_s’ has no member named ‘rtype’
+      c/_cffi_backend.c:4941: error: ‘struct funcbuilder_s’ has no member named ‘atypes’
+      c/_cffi_backend.c:4941: error: ‘FFI_OK’ undeclared (first use in this function)
+      c/_cffi_backend.c: In function ‘new_function_type’:
+      c/_cffi_backend.c:4985: error: too many arguments to function ‘fb_prepare_cif’
+      c/_cffi_backend.c:4999: error: ‘struct funcbuilder_s’ has no member named ‘nargs’
+      c/_cffi_backend.c:5009: error: ‘struct funcbuilder_s’ has no member named ‘nargs’
+      c/_cffi_backend.c:5019: error: ‘struct funcbuilder_s’ has no member named ‘nargs’
+      c/_cffi_backend.c:5022: error: ‘struct funcbuilder_s’ has no member named ‘nargs’
+      c/_cffi_backend.c:5023: error: ‘struct funcbuilder_s’ has no member named ‘nargs’
+      c/_cffi_backend.c:5025: error: ‘struct funcbuilder_s’ has no member named ‘nargs’
+      c/_cffi_backend.c: In function ‘b_new_function_type’:
+      c/_cffi_backend.c:5036: error: ‘FFI_DEFAULT_ABI’ undeclared (first use in this function)
+      c/_cffi_backend.c: In function ‘convert_from_object_fficallback’:
+      c/_cffi_backend.c:5056: error: ‘ffi_arg’ undeclared (first use in this function)
+      c/_cffi_backend.c: At top level:
+      c/_cffi_backend.c:5238: error: expected ‘)’ before ‘*’ token
+      c/_cffi_backend.c: In function ‘prepare_callback_info_tuple’:
+      c/_cffi_backend.c:5280: error: ‘ffi_arg’ undeclared (first use in this function)
+      c/_cffi_backend.c: In function ‘b_callback’:
+      c/_cffi_backend.c:5313: error: ‘ffi_closure’ undeclared (first use in this function)
+      c/_cffi_backend.c:5313: error: ‘closure’ undeclared (first use in this function)
+      c/_cffi_backend.c:5323: warning: implicit declaration of function ‘cffi_closure_alloc’
+      c/_cffi_backend.c:5341: warning: implicit declaration of function ‘ffi_prep_closure’
+      c/_cffi_backend.c:5341: error: ‘cif_description_t’ has no member named ‘cif’
+      c/_cffi_backend.c:5342: error: ‘invoke_callback’ undeclared (first use in this function)
+      c/_cffi_backend.c:5342: error: ‘FFI_OK’ undeclared (first use in this function)
+      In file included from c/cffi1_module.c:3,
+                       from c/_cffi_backend.c:6740:
+      c/realize_c_type.c: In function ‘realize_c_type_or_func’:
+      c/realize_c_type.c:577: error: ‘FFI_DEFAULT_ABI’ undeclared (first use in this function)
+      c/_cffi_backend.c: In function ‘init_cffi_backend’:
+      c/_cffi_backend.c:6832: error: ‘FFI_DEFAULT_ABI’ undeclared (first use in this function)
+      error: command 'gcc' failed with exit status 1
+      
+      ----------------------------------------
+  Command "/opt/python/run/venv/bin/python2.7 -c "import setuptools, tokenize;__file__='/tmp/pip-build-2uNK2_/cffi/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-dihTjZ-record/install-record.txt --single-version-externally-managed --compile --install-headers /opt/python/run/venv/include/site/python2.7/cffi" failed with error code 1 in /tmp/pip-build-2uNK2_/cffi
+  You are using pip version 7.1.2, however version 9.0.1 is available.
+  You should consider upgrading via the 'pip install --upgrade pip' command.
+  2017-02-23 08:23:38,712 ERROR    Error installing dependencies: Command '/opt/python/run/venv/bin/pip install -r /opt/python/ondeck/app/requirements.txt' returned non-zero exit status 1
+  Traceback (most recent call last):
+    File "/opt/elasticbeanstalk/hooks/appdeploy/pre/03deploy.py", line 22, in main
+      install_dependencies()
+    File "/opt/elasticbeanstalk/hooks/appdeploy/pre/03deploy.py", line 18, in install_dependencies
+      check_call('%s install -r %s' % (os.path.join(APP_VIRTUAL_ENV, 'bin', 'pip'), requirements_file), shell=True)
+    File "/usr/lib64/python2.7/subprocess.py", line 541, in check_call
+      raise CalledProcessError(retcode, cmd)
+  CalledProcessError: Command '/opt/python/run/venv/bin/pip install -r /opt/python/ondeck/app/requirements.txt' returned non-zero exit status 1 (Executor::NonZeroExitStatus)
+
+
+[2017-02-23T08:23:38.718Z] INFO  [2995]  - [Application deployment app-ca74-170222_222047@1/StartupStage0/AppDeployPreHook/03deploy.py] : Activity failed.
+[2017-02-23T08:23:38.719Z] INFO  [2995]  - [Application deployment app-ca74-170222_222047@1/StartupStage0/AppDeployPreHook] : Activity failed.
+[2017-02-23T08:23:38.719Z] INFO  [2995]  - [Application deployment app-ca74-170222_222047@1/StartupStage0] : Activity failed.
+[2017-02-23T08:23:38.719Z] INFO  [2995]  - [Application deployment app-ca74-170222_222047@1] : Completed activity. Result:
+  Application deployment - Command CMD-Startup failed
+[2017-02-23T08:26:40.005Z] INFO  [3209]  - [CMD-TailLogs] : Starting activity...
+[2017-02-23T08:26:40.005Z] INFO  [3209]  - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2017-02-23T08:26:40.005Z] INFO  [3209]  - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2017-02-23T08:26:40.006Z] INFO  [3209]  - [CMD-TailLogs/TailLogs] : Starting activity...
+[2017-02-23T08:26:40.006Z] INFO  [3209]  - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2017-02-23T08:26:40.201Z] INFO  [3209]  - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2017-02-23T08:26:40.201Z] INFO  [3209]  - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2017-02-23T08:26:40.201Z] INFO  [3209]  - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2017-02-23T08:26:40.201Z] INFO  [3209]  - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2017-02-23T08:26:40.201Z] INFO  [3209]  - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2017-02-24T05:06:17.338Z] INFO  [835]   - [CMD-TailLogs] : Starting activity...
+[2017-02-24T05:06:17.338Z] INFO  [835]   - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2017-02-24T05:06:17.338Z] INFO  [835]   - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2017-02-24T05:06:17.338Z] INFO  [835]   - [CMD-TailLogs/TailLogs] : Starting activity...
+[2017-02-24T05:06:17.338Z] INFO  [835]   - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+[2017-02-24T05:06:17.506Z] INFO  [835]   - [CMD-TailLogs/TailLogs/TailLogs] : Completed activity.
+[2017-02-24T05:06:17.506Z] INFO  [835]   - [CMD-TailLogs/TailLogs] : Completed activity. Result:
+  CMD-TailLogs - stage 0 - Command CMD-TailLogs stage 0 completed
+[2017-02-24T05:06:17.506Z] INFO  [835]   - [CMD-TailLogs/AddonsAfter] : Starting activity...
+[2017-02-24T05:06:17.507Z] INFO  [835]   - [CMD-TailLogs/AddonsAfter] : Completed activity.
+[2017-02-24T05:06:17.507Z] INFO  [835]   - [CMD-TailLogs] : Completed activity. Result:
+  CMD-TailLogs - Command CMD-TailLogs succeeded
+[2017-02-24T05:09:25.376Z] INFO  [936]   - [CMD-TailLogs] : Starting activity...
+[2017-02-24T05:09:25.376Z] INFO  [936]   - [CMD-TailLogs/AddonsBefore] : Starting activity...
+[2017-02-24T05:09:25.376Z] INFO  [936]   - [CMD-TailLogs/AddonsBefore] : Completed activity.
+[2017-02-24T05:09:25.376Z] INFO  [936]   - [CMD-TailLogs/TailLogs] : Starting activity...
+[2017-02-24T05:09:25.376Z] INFO  [936]   - [CMD-TailLogs/TailLogs/TailLogs] : Starting activity...
+
+
+
+-------------------------------------
+/var/log/eb-commandprocessor.log
+-------------------------------------
+  2017-02-23 08:23:38,712 ERROR    Error installing dependencies: Command '/opt/python/run/venv/bin/pip install -r /opt/python/ondeck/app/requirements.txt' returned non-zero exit status 1
+  Traceback (most recent call last):
+    File "/opt/elasticbeanstalk/hooks/appdeploy/pre/03deploy.py", line 22, in main
+      install_dependencies()
+    File "/opt/elasticbeanstalk/hooks/appdeploy/pre/03deploy.py", line 18, in install_dependencies
+      check_call('%s install -r %s' % (os.path.join(APP_VIRTUAL_ENV, 'bin', 'pip'), requirements_file), shell=True)
+    File "/usr/lib64/python2.7/subprocess.py", line 541, in check_call
+      raise CalledProcessError(retcode, cmd)
+  CalledProcessError: Command '/opt/python/run/venv/bin/pip install -r /opt/python/ondeck/app/requirements.txt' returned non-zero exit status 1 (Executor::NonZeroExitStatus)
+
+
+[2017-02-23T08:23:38.719Z] ERROR [2995]  : Command CMD-Startup failed!
+[2017-02-23T08:23:38.720Z] INFO  [2995]  : Command processor returning results: 
+{"status":"FAILURE","api_version":"1.0","results":[{"status":"FAILURE","msg":"(TRUNCATED)...)\n  File \"/usr/lib64/python2.7/subprocess.py\", line 541, in check_call\n    raise CalledProcessError(retcode, cmd)\nCalledProcessError: Command '/opt/python/run/venv/bin/pip install -r /opt/python/ondeck/app/requirements.txt' returned non-zero exit status 1. \nHook /opt/elasticbeanstalk/hooks/appdeploy/pre/03deploy.py failed. For more detail, check /var/log/eb-activity.log using console or EB CLI","returncode":1,"events":[{"msg":"Your requirements.txt is invalid. Snapshot your logs for details.","severity":"ERROR","timestamp":1487838218},{"msg":"Error installing dependencies: Command '/opt/python/run/venv/bin/pip install -r /opt/python/ondeck/app/requirements.txt' returned non-zero exit status 1","severity":"SYSTEM","timestamp":1487838218}]}],"truncated":"true"}
+[2017-02-23T08:26:39.999Z] DEBUG [3209]  : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2017-02-23T08:26:39.999Z] DEBUG [3209]  : Checking if the command processor should execute...
+[2017-02-23T08:26:40.001Z] DEBUG [3209]  : Checking whether the command is applicable to instance (i-0bd720e4975ef9ae7)..
+[2017-02-23T08:26:40.001Z] INFO  [3209]  : Command is applicable to this instance (i-0bd720e4975ef9ae7)..
+[2017-02-23T08:26:40.002Z] DEBUG [3209]  : Checking if the received command stage is valid..
+[2017-02-23T08:26:40.002Z] INFO  [3209]  : No stage_num in command. Valid stage..
+[2017-02-23T08:26:40.002Z] INFO  [3209]  : Received command CMD-TailLogs: {"execution_data":"{\"aws_access_key_id\":\"ASIAITJV7ERMDYXMLURA\",\"signature\":\"kRMEKz5Ia08E7VSE6mb3ZEpxQXo=\",\"security_token\":\"FQoDYXdzENL\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/wEaDDGwqOPufSVBHB4WviKVA7qGbxXJ2L0Cq6MAB+5oF4FO\\\/K9gVNttdZT+IGtlAgomWFVR8YOYNTxjK6oOiw+ZfOrPPbXZg9mUJkV4SYXTExeksYzDmdB2va+TwA7UrUVtLGodRqjTaIP34wuwm8pmAIQZBQc7LObLP9S7DmDue6iKZP3Kha4BdSm5ZHuOxTfekAtHk+sVDdG9AWRc037XpYr2tl5FxXtui4RnpVX8ehy6s906xNUXblV+UCeXxODMlqJrFskGeqvtcA7B9kCmEsw0GWR4nWMKF57oiUTxymZ1jfZfbXUotzFBtKGdtDJSgGI+1XvY+33GpC4\\\/PETFT9C3oYl6ZWPcZIGMHwOPS71kT\\\/D4MjacWjjMexsjWrzOW+RjckSRpTrme3kcWLOuQO26EjxpsFB3nknVBxv7sw5damdQ\\\/tgasLpJ1tyD\\\/37qV41XZbad3UNWkkwtFpBc51tvHX4vlBGgTC1WK+fTfyzT7UFjCVjoxLFh1QZuUCs846DPMViIoFO0zM\\\/0KP7dRhH4Elc38CKGdd1WMCNmy0k3oemCKyi9ubrFBQ==\",\"policy\":\"eyJleHBpcmF0aW9uIjoiMjAxNy0wMi0yM1QwODo1NjozNy42MjlaIiwiY29uZGl0aW9ucyI6W1sic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS10aW1lX3N0YW1wIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLXB1Ymxpc2hfbWVjaGFuaXNtIiwiIl0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJyZXNvdXJjZXNcL2Vudmlyb25tZW50c1wvbG9nc1wvIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWJhdGNoX2lkIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWZpbGVfbmFtZSIsIiJdLFsic3RhcnRzLXdpdGgiLCIkeC1hbXotc2VjdXJpdHktdG9rZW4iLCIiXSxbInN0YXJ0cy13aXRoIiwiJENvbnRlbnQtVHlwZSIsIiJdLFsiZXEiLCIkYnVja2V0IiwiZWxhc3RpY2JlYW5zdGFsay11cy13ZXN0LTItMDU5NjM3OTA3NTAyIl0sWyJlcSIsIiRhY2wiLCJwcml2YXRlIl1dfQ==\"}","instance_ids":["i-0bd720e4975ef9ae7"],"data":"cb2c2edf-f9a1-11e6-84bb-d5463ca32ba7","command_name":"CMD-TailLogs","api_version":"1.0","resource_name":"AWSEBAutoScalingGroup","request_id":"cb2c2edf-f9a1-11e6-84bb-d5463ca32ba7","command_timeout":"600"}
+[2017-02-23T08:26:40.002Z] INFO  [3209]  : Command processor should execute command.
+[2017-02-23T08:26:40.002Z] DEBUG [3209]  : Storing current stage..
+[2017-02-23T08:26:40.002Z] DEBUG [3209]  : Stage_num does not exist. Not saving null stage. Returning..
+[2017-02-23T08:26:40.002Z] DEBUG [3209]  : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2017-02-23T08:26:40.002Z] DEBUG [3209]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2017-02-23T08:26:40.003Z] DEBUG [3209]  : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2017-02-23T08:26:40.004Z] INFO  [3209]  : Found enabled addons: ["logpublish", "logstreaming"].
+[2017-02-23T08:26:40.005Z] INFO  [3209]  : Updating Command definition of addon logpublish.
+[2017-02-23T08:26:40.005Z] INFO  [3209]  : Updating Command definition of addon logstreaming.
+[2017-02-23T08:26:40.005Z] DEBUG [3209]  : Loaded definition of Command CMD-TailLogs.
+[2017-02-23T08:26:40.005Z] INFO  [3209]  : Executing CMD-TailLogs
+[2017-02-23T08:26:40.005Z] INFO  [3209]  : Executing command: CMD-TailLogs...
+[2017-02-23T08:26:40.005Z] INFO  [3209]  : Executing command CMD-TailLogs activities...
+[2017-02-23T08:26:40.005Z] DEBUG [3209]  : Setting environment variables..
+[2017-02-23T08:26:40.005Z] INFO  [3209]  : Running AddonsBefore for command CMD-TailLogs...
+[2017-02-23T08:26:40.005Z] DEBUG [3209]  : Running stages of Command CMD-TailLogs from stage 0 to stage 0...
+[2017-02-23T08:26:40.005Z] INFO  [3209]  : Running stage 0 of command CMD-TailLogs...
+[2017-02-23T08:26:40.006Z] DEBUG [3209]  : Loaded 1 actions for stage 0.
+[2017-02-23T08:26:40.006Z] INFO  [3209]  : Running 1 of 1 actions: TailLogs...
+[2017-02-23T08:26:40.201Z] INFO  [3209]  : Running AddonsAfter for command CMD-TailLogs...
+[2017-02-23T08:26:40.201Z] INFO  [3209]  : Command CMD-TailLogs succeeded!
+[2017-02-23T08:26:40.201Z] INFO  [3209]  : Command processor returning results: 
+{"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[{"msg":"[Instance: i-0bd720e4975ef9ae7] Successfully finished tailing 5 log(s)","severity":"INFO","timestamp":1487838400201}]}]}
+[2017-02-24T05:06:17.332Z] DEBUG [835]   : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2017-02-24T05:06:17.332Z] DEBUG [835]   : Checking if the command processor should execute...
+[2017-02-24T05:06:17.334Z] DEBUG [835]   : Checking whether the command is applicable to instance (i-0bd720e4975ef9ae7)..
+[2017-02-24T05:06:17.334Z] INFO  [835]   : Command is applicable to this instance (i-0bd720e4975ef9ae7)..
+[2017-02-24T05:06:17.334Z] DEBUG [835]   : Checking if the received command stage is valid..
+[2017-02-24T05:06:17.334Z] INFO  [835]   : No stage_num in command. Valid stage..
+[2017-02-24T05:06:17.334Z] INFO  [835]   : Received command CMD-TailLogs: {"execution_data":"{\"aws_access_key_id\":\"ASIAIX5M2GOH57EVTS6A\",\"signature\":\"CnbY9SdLttyVzdSsaKRcNKaNJiY=\",\"security_token\":\"FQoDYXdzEOb\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/wEaDCHg\\\/CTkgikUqE4KiSKVA46+4GlUSWhXEegJOXvpzLcZWsbCo9dSUf4yAL\\\/eQjJDTGdj8cxjRHZ9LsNRHXh4a8iKe0PLwN3u7GsFJUNWBUO0LEiRqIX5OxkasXxgPdTHTLnsn5KbCMu6wlnDkDiL84\\\/OwFhYYS8nvdNJbWFA9\\\/hvHsIqTuHtRC13KeX4C5ee25UN5oKDCYFc8Ygw2jYjA\\\/zufAFmd5HghB3AP8kF3NgfjSlSnXj4qLXhhB5pt13TWaqd8tL597EaR8rRKKVn\\\/6h3yyX2bh10EMDWKyHbWNBOe3ZEL2ChBivnonVdFd9wsvGCNnHIOnM0IS2znZOwbBkVaZtm6w\\\/Ua54Astw4lW1XygP1HA9vlXg6veRjLuTarNfzuFgxu67DU4jGZnod1epy4A+Gjhs30\\\/f\\\/et5oQEaFMgSr9elvhl5sUmwMIxGN\\\/yGASudi8mBlIiRL23cj8bhI36\\\/BMnV7Dd8sdPexpxjEYU0jFv1aJ3v6Vtcy9basiXQDrmkpGLQ1hlSYghmuPWX+CD15ufjBCrmTEOFSloYken58sijH\\\/r7FBQ==\",\"policy\":\"eyJleHBpcmF0aW9uIjoiMjAxNy0wMi0yNFQwNTozNjoxNS4yNDhaIiwiY29uZGl0aW9ucyI6W1sic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS10aW1lX3N0YW1wIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLXB1Ymxpc2hfbWVjaGFuaXNtIiwiIl0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJyZXNvdXJjZXNcL2Vudmlyb25tZW50c1wvbG9nc1wvIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWJhdGNoX2lkIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWZpbGVfbmFtZSIsIiJdLFsic3RhcnRzLXdpdGgiLCIkeC1hbXotc2VjdXJpdHktdG9rZW4iLCIiXSxbInN0YXJ0cy13aXRoIiwiJENvbnRlbnQtVHlwZSIsIiJdLFsiZXEiLCIkYnVja2V0IiwiZWxhc3RpY2JlYW5zdGFsay11cy13ZXN0LTItMDU5NjM3OTA3NTAyIl0sWyJlcSIsIiRhY2wiLCJwcml2YXRlIl1dfQ==\"}","instance_ids":["i-0bd720e4975ef9ae7"],"data":"f7ab725c-fa4e-11e6-b32f-3dbb9b25e4da","command_name":"CMD-TailLogs","api_version":"1.0","resource_name":"AWSEBAutoScalingGroup","request_id":"f7ab725c-fa4e-11e6-b32f-3dbb9b25e4da","command_timeout":"600"}
+[2017-02-24T05:06:17.334Z] INFO  [835]   : Command processor should execute command.
+[2017-02-24T05:06:17.334Z] DEBUG [835]   : Storing current stage..
+[2017-02-24T05:06:17.334Z] DEBUG [835]   : Stage_num does not exist. Not saving null stage. Returning..
+[2017-02-24T05:06:17.334Z] DEBUG [835]   : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2017-02-24T05:06:17.334Z] DEBUG [835]   : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2017-02-24T05:06:17.336Z] DEBUG [835]   : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2017-02-24T05:06:17.336Z] INFO  [835]   : Found enabled addons: ["logpublish", "logstreaming"].
+[2017-02-24T05:06:17.337Z] INFO  [835]   : Updating Command definition of addon logpublish.
+[2017-02-24T05:06:17.337Z] INFO  [835]   : Updating Command definition of addon logstreaming.
+[2017-02-24T05:06:17.337Z] DEBUG [835]   : Loaded definition of Command CMD-TailLogs.
+[2017-02-24T05:06:17.337Z] INFO  [835]   : Executing CMD-TailLogs
+[2017-02-24T05:06:17.338Z] INFO  [835]   : Executing command: CMD-TailLogs...
+[2017-02-24T05:06:17.338Z] INFO  [835]   : Executing command CMD-TailLogs activities...
+[2017-02-24T05:06:17.338Z] DEBUG [835]   : Setting environment variables..
+[2017-02-24T05:06:17.338Z] INFO  [835]   : Running AddonsBefore for command CMD-TailLogs...
+[2017-02-24T05:06:17.338Z] DEBUG [835]   : Running stages of Command CMD-TailLogs from stage 0 to stage 0...
+[2017-02-24T05:06:17.338Z] INFO  [835]   : Running stage 0 of command CMD-TailLogs...
+[2017-02-24T05:06:17.338Z] DEBUG [835]   : Loaded 1 actions for stage 0.
+[2017-02-24T05:06:17.338Z] INFO  [835]   : Running 1 of 1 actions: TailLogs...
+[2017-02-24T05:06:17.506Z] INFO  [835]   : Running AddonsAfter for command CMD-TailLogs...
+[2017-02-24T05:06:17.507Z] INFO  [835]   : Command CMD-TailLogs succeeded!
+[2017-02-24T05:06:17.507Z] INFO  [835]   : Command processor returning results: 
+{"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"","returncode":0,"events":[{"msg":"[Instance: i-0bd720e4975ef9ae7] Successfully finished tailing 5 log(s)","severity":"INFO","timestamp":1487912777507}]}]}
+[2017-02-24T05:09:25.370Z] DEBUG [936]   : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2017-02-24T05:09:25.370Z] DEBUG [936]   : Checking if the command processor should execute...
+[2017-02-24T05:09:25.372Z] DEBUG [936]   : Checking whether the command is applicable to instance (i-0bd720e4975ef9ae7)..
+[2017-02-24T05:09:25.372Z] INFO  [936]   : Command is applicable to this instance (i-0bd720e4975ef9ae7)..
+[2017-02-24T05:09:25.372Z] DEBUG [936]   : Checking if the received command stage is valid..
+[2017-02-24T05:09:25.372Z] INFO  [936]   : No stage_num in command. Valid stage..
+[2017-02-24T05:09:25.372Z] INFO  [936]   : Received command CMD-TailLogs: {"execution_data":"{\"aws_access_key_id\":\"ASIAJ5M4CYEXSXWE7PPQ\",\"signature\":\"62Mt9kdCdwPC5Ja2In+S+VDpLYI=\",\"security_token\":\"FQoDYXdzEOb\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/\\\/wEaDAssts48IydTVprBbyKVA7cYMNydVB87vKKb9Hg0+0g9I5tUFp\\\/j4AjRANKf6GTITlhwyUm3pomLsKSvCfy9Sjww2G8vMclZzKIpFDnXdVnkYVJs+lQSraCYVQ22JMEDzl4eII4ef\\\/l7ZwA+NKNOIswuDKPxKkV34WNvxoBb4+Zi8zhhgldXeN7WAhWcEEvfGpJNHVHYfhssJNfvMFl6KFBlEmjhq73VidWKyUt+79JKSpD3ooosxOzeL1pucEk6v663X1hRGZqltlmVZzNk4FayIcRr2ugpS2eEy\\\/bPF6dVvcvDX52ePoVL3VLxXbQ7DUVk\\\/vRwWZ9tOMaclMhnOrofTcmMrCVJG9fzlFXlGZqAoBAYM5Qnk5dcdVAi49WG4OcdHYT1xHghToUNS77YaUxYuHRUhhf18jo2jcJav8ZkiYloRZTxID5xjX3Ct4gyJp4QRR5tUpv7dTNnvbQS82mE04aE4srcMP8WmotOUo7BvlV8eEvlwXoad\\\/D54cMNCLp9it+Kdi7o3SuuwjlnJGtA9wr+fXTa994tNGY0wa6eNFsr8yiDgL\\\/FBQ==\",\"policy\":\"eyJleHBpcmF0aW9uIjoiMjAxNy0wMi0yNFQwNTozOToyMy4yOTlaIiwiY29uZGl0aW9ucyI6W1sic3RhcnRzLXdpdGgiLCIkeC1hbXotbWV0YS10aW1lX3N0YW1wIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLXB1Ymxpc2hfbWVjaGFuaXNtIiwiIl0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJyZXNvdXJjZXNcL2Vudmlyb25tZW50c1wvbG9nc1wvIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWJhdGNoX2lkIiwiIl0sWyJzdGFydHMtd2l0aCIsIiR4LWFtei1tZXRhLWZpbGVfbmFtZSIsIiJdLFsic3RhcnRzLXdpdGgiLCIkeC1hbXotc2VjdXJpdHktdG9rZW4iLCIiXSxbInN0YXJ0cy13aXRoIiwiJENvbnRlbnQtVHlwZSIsIiJdLFsiZXEiLCIkYnVja2V0IiwiZWxhc3RpY2JlYW5zdGFsay11cy13ZXN0LTItMDU5NjM3OTA3NTAyIl0sWyJlcSIsIiRhY2wiLCJwcml2YXRlIl1dfQ==\"}","instance_ids":["i-0bd720e4975ef9ae7"],"data":"67c23544-fa4f-11e6-ae08-cb551c25f22c","command_name":"CMD-TailLogs","api_version":"1.0","resource_name":"AWSEBAutoScalingGroup","request_id":"67c23544-fa4f-11e6-ae08-cb551c25f22c","command_timeout":"600"}
+[2017-02-24T05:09:25.372Z] INFO  [936]   : Command processor should execute command.
+[2017-02-24T05:09:25.372Z] DEBUG [936]   : Storing current stage..
+[2017-02-24T05:09:25.372Z] DEBUG [936]   : Stage_num does not exist. Not saving null stage. Returning..
+[2017-02-24T05:09:25.372Z] DEBUG [936]   : Reading config file: /etc/elasticbeanstalk/.aws-eb-stack.properties
+[2017-02-24T05:09:25.372Z] DEBUG [936]   : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_ContainerConfigFileContent||commands..
+[2017-02-24T05:09:25.374Z] DEBUG [936]   : Retrieving metadata for key: AWS::ElasticBeanstalk::Ext||_API||_Commands..
+[2017-02-24T05:09:25.374Z] INFO  [936]   : Found enabled addons: ["logpublish", "logstreaming"].
+[2017-02-24T05:09:25.375Z] INFO  [936]   : Updating Command definition of addon logpublish.
+[2017-02-24T05:09:25.375Z] INFO  [936]   : Updating Command definition of addon logstreaming.
+[2017-02-24T05:09:25.376Z] DEBUG [936]   : Loaded definition of Command CMD-TailLogs.
+[2017-02-24T05:09:25.376Z] INFO  [936]   : Executing CMD-TailLogs
+[2017-02-24T05:09:25.376Z] INFO  [936]   : Executing command: CMD-TailLogs...
+[2017-02-24T05:09:25.376Z] INFO  [936]   : Executing command CMD-TailLogs activities...
+[2017-02-24T05:09:25.376Z] DEBUG [936]   : Setting environment variables..
+[2017-02-24T05:09:25.376Z] INFO  [936]   : Running AddonsBefore for command CMD-TailLogs...
+[2017-02-24T05:09:25.376Z] DEBUG [936]   : Running stages of Command CMD-TailLogs from stage 0 to stage 0...
+[2017-02-24T05:09:25.376Z] INFO  [936]   : Running stage 0 of command CMD-TailLogs...
+[2017-02-24T05:09:25.376Z] DEBUG [936]   : Loaded 1 actions for stage 0.
+[2017-02-24T05:09:25.376Z] INFO  [936]   : Running 1 of 1 actions: TailLogs...
+
+
+
