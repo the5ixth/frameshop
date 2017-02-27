@@ -17,7 +17,11 @@ body {
   min-height: calc(100vh - 386px);
 }
 .footer {
-  height: 236px;
+  min-height: 236px;
+}
+
+.edit_main{
+	margin-top: 100px;
 }
 
 .pdtop{

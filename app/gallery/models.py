@@ -10,12 +10,19 @@ class Photo(db.Model):
     price = db.Column(db.Integer, default=0)
     artist = db.Column(db.String(50), default="")
 
+
 class Blog(db.Model):
     __tablename__ = 'blog'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
     body = db.Column(db.Text)
     date = db.Column(db.String(50))
+
+
+class Description(db.Model):
+    __tablename__='description'
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.Text)
 
 
 class User(db.Model):

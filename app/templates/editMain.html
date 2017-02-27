@@ -18,16 +18,22 @@
 				<div class="w3-content">
 					<div class="w3-twothird">
 						<h1 class="">GENESIS FRAME SHOP AND GALLERY</h1>
-						{% if desc: %}
-							{{ desc.body }}
-						{% endif %}
-						<div class="centered edit_main">
-							{% if user.authenticated: %} 
-								<a href="/body">
-									<button class="w3-btn w3-round-xlarge w3-hover-blue">Edit</button>
-								</a>
-							{% endif %}
-						</div>
+
+						<form class="w3-container block-center" method='POST' action='/body' enctype="multipart/form-data" style="max-width: 600px;">
+							<dl>
+								{{ form.csrf_token() }}
+								<dt>
+									<label for='body'> Body:</label>
+								</dt>
+								<dd>
+									<label for="body">Body:</label>
+									<textarea id="body" name="body" value="" type="text">{% if desc %}{{ desc.body }} {% endif %}</textarea>
+								</dd>
+							</dl>
+							<dd>
+								<input id="submit" name="submit" value="Submit" type="submit">
+							</dd>
+						</form>
 					</div>
 
 					<div class="w3-third w3-center ">

@@ -35,6 +35,12 @@ class EditForm(FlaskForm):
     artist = StringField('Artist: ', validators=[])
     submit = SubmitField("Submit")
 
+
+class DescForm(FlaskForm):
+    body = TextAreaField('Body', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+
 #class BlogForm(FlaskForm):
 #    title = StringField('Title: ', validators=[DataRequired()])
 #    body = TextAreaField('Body: ', validators=[DataRequired()])

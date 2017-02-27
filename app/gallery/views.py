@@ -1,6 +1,6 @@
 from flask import Blueprint, request, render_template, redirect, url_for, current_app
 from flask_login import current_user
-from .models import Photo
+from .models import Photo, Description
 from sqlalchemy.sql.expression import func
 
 main = Blueprint("main", __name__)
@@ -10,9 +10,10 @@ user = current_user
 
 @main.route('/')
 def about():
+    desc = Description.query.first()
     photo = Photo.query.order_by(func.rand()).first()
     #posts = Blog.query.order_by(Blog.date).limit(3)
-    return render_template('about.html', photo=photo, user=user)
+    return render_template('about.html', photo=photo, user=user, desc=desc)
 
 
 @main.route('/gallery/')

@@ -3,10 +3,10 @@ import time
 from werkzeug.utils import secure_filename
 from flask import current_app, Blueprint, render_template, abort, request, flash, redirect, url_for
 from .. import login_manager, bcrypt
-from .forms import LoginForm, UploadForm, SignupForm, EditForm
+from .forms import LoginForm, UploadForm, SignupForm, EditForm, DescForm
 from flask_login import current_user, login_required, login_user, logout_user, confirm_login, fresh_login_required
 
-from .models import User, Photo
+from .models import User, Photo, Description
 
 from .. import db
 
@@ -109,6 +109,23 @@ def edit(num):
         db.session.commit()
         return redirect(url_for("main.about"))
     return render_template("edit.html", photo=photo, form=form, user=user)
+
+
+@auth_flask_login.route('/body', methods={'GET', 'POST'})
+@login_required
+def editMain():
+    desc = Description.query.first()
+    form = DescForm()
+    if form.validate_on_submit():
+        if Description.query.first():
+            desc = Description.query.first()
+        else:
+            desc = Description()
+        form.populate_obj(desc)
+        db.session.add(desc)
+        db.session.commit()
+        return redirect(url_for('main.about'))
+    return render_template('editMain.html', desc=desc, user=user, form=form)
 
 
 #@auth_flask_login.route('/blog', methods=['GET', 'POST'])
