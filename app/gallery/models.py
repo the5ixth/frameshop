@@ -37,6 +37,7 @@ class User(db.Model):
     email = db.Column(db.String(100), primary_key=True)
     password = db.Column(db.String(100))
     authenticated = db.Column(db.Boolean, default=False)
+    error = db.Column(db.String(15))
 
     def is_active(self):
         """True, as all users are active."""

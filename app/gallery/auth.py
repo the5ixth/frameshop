@@ -23,6 +23,7 @@ def register():
         form.populate_obj(userdb)
         pw_hash = bcrypt.generate_password_hash(form.password.data)
         userdb.password = pw_hash
+        userdb.error = time.strftime("%y%j%H%M%S")
         db.session.add(userdb)
         db.session.commit()
         return redirect(url_for('auth_flask_login.login'))
@@ -42,6 +43,15 @@ def login():
                 login_user(usr, remember=True)
                 flash('You were successfully logged in')
                 return redirect(url_for('auth_flask_login.upload'))
+            else:
+                last = user.error
+                now = time.strftime("%y%j%H%M%S")
+                usr.error = now
+                if int(last) + 3 > int(now):
+                    time.sleep(3)
+                db.session.add(usr)
+                db.session.commit()
+                return redirect(url_for('auth_flask_login.login'))
     return render_template("login.html", form=form, user=user)
 
 
@@ -76,7 +86,7 @@ def upload():
     if form.validate_on_submit():
         ph = Photo()
         form.populate_obj(ph)
-        filename = time.strftime("%y%j") + "_" + time.strftime("%d%H%S") + \
+        filename = time.strftime("%y%j") + "_" + time.strftime("%H%M%S") + \
                    "_" + secure_filename(ph.imgfile.filename[-5:])
         ph.imgfilename = filename
         form.imgfile.data.save(os.path.join(current_app.config['UPLOAD_FOLDER'],

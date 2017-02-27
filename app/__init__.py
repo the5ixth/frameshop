@@ -23,7 +23,7 @@ def create_app(config="dev"):
     bcrypt = Bcrypt(app)
 
     with app.app_context():
-        #db.drop_all()
+        db.drop_all()
         db.create_all()
 
     return app
