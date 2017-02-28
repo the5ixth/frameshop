@@ -15,19 +15,19 @@ user = current_user
 auth_flask_login = Blueprint('auth_flask_login', __name__, template_folder='templates')
 
 
-@auth_flask_login.route('/register', methods=["GET", "POST"])
-def register():
-    form = SignupForm()
-    if form.validate_on_submit():
-        userdb = User()
-        form.populate_obj(userdb)
-        pw_hash = bcrypt.generate_password_hash(form.password.data)
-        userdb.password = pw_hash
-        userdb.error = time.strftime("%y%j%H%M%S")
-        db.session.add(userdb)
-        db.session.commit()
-        return redirect(url_for('auth_flask_login.login'))
-    return render_template('register.html', form=form, user=user)
+#@auth_flask_login.route('/register', methods=["GET", "POST"])
+#def register():
+#    form = SignupForm()
+#    if form.validate_on_submit():
+#        userdb = User()
+#        form.populate_obj(userdb)
+#        pw_hash = bcrypt.generate_password_hash(form.password.data)
+#        userdb.password = pw_hash
+#        userdb.error = time.strftime("%y%j%H%M%S")
+#        db.session.add(userdb)
+#        db.session.commit()
+#        return redirect(url_for('auth_flask_login.login'))
+#       return render_template('register.html', form=form, user=user)
 
 
 @auth_flask_login.route("/login", methods=["GET", "POST"])
