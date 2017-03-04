@@ -5,7 +5,7 @@ class DevConfig:
 
     SECRET_KEY = 'key'
 
-    UPLOAD_FOLDER = '/home/the5ixth/Desktop/frame/frameshop/app/static/images'
+    UPLOAD_FOLDER = '/static/images'
     ALLOWED_EXTENSIONS = set( [ 'png', 'jpg', 'jpeg', 'gif'] )
 
 

@@ -3,7 +3,7 @@ from flask_login import current_user
 from .models import Photo, Description
 from sqlalchemy.sql.expression import func
 
-main = Blueprint("main", __name__)
+main = Blueprint("main", __name__, static_url_path='/static', static_folder='/static')
 
 user = current_user
 
