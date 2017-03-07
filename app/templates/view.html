@@ -41,8 +41,8 @@
 				</div>
 			</div>
 			<hr />
-			<div class="centered w3-bar mobile" style="width: 100%;">
-				{% if user.authenticated: %}
+			{% if user.authenticated: %}
+				<div class="centered w3-bar mobile" style="width: 100%;">
 					<a href="/delete/image/{{photo.id}}">
 						<button class="w3-btn w3-bar-item w3-hover-red" style="width: 25%;">Delete</button>
 					</a>
@@ -52,14 +52,16 @@
 					<a href="/edit/image/{{photo.id}}">
 						<button class="w3-btn w3-bar-item w3-hover-blue" style="width: 25%;">Edit</button>
 					</a>
-				{% else %}
+				</div>
+			{% else %}
+				<div class="centered w3-bar mobile bar-center" >
 					<a href="{{ url_for('main.gallery') }}">
-						<button class="w3-btn w3-bar-item w3-black w3-hover-white">Back to Gallery</button>
+						<button class="w3-btn w3-bar-item w3-black w3-hover-white" style="width: 100%;">Back to Gallery</button>
 					</a>
-				{% endif %}
-			</div>
-			<div class="centered w3-bar bar-center gal-btn">
-				{% if user.authenticated: %}
+				</div>
+			{% endif %}
+			{% if user.authenticated: %}
+				<div class="centered w3-bar bar-center gal-btn">
 					<a href="/delete/image/{{photo.id}}">
 						<button class="w3-btn w3-bar-item w3-hover-red" style="width: 33%;">Delete</button>
 					</a>
@@ -69,12 +71,14 @@
 					<a href="/edit/image/{{photo.id}}">
 						<button class="w3-btn w3-bar-item w3-hover-blue" style="width: 33%;">Edit</button>
 					</a>
-				{% else %}
+				</div>
+			{% else %}
+				<div class="centered w3-bar bar-center gal-btn">
 					<a href="{{ url_for('main.gallery') }}">
-						<button class="w3-btn w3-bar-item w3-black w3-hover-white">Back to Gallery</button>
+						<button class="w3-btn w3-bar-item w3-black w3-hover-white" style="width: 100%;">Back to Gallery</button>
 					</a>
-				{% endif %}
-			</div> 
+				</div>
+			{% endif %}
 			<div class="comment">
 				<hr />
 				<div class="">
@@ -109,11 +113,11 @@
 				{% for comment in comments.items: %}
 					{% if not comment.hidden : %}
 						<div class="comment">
-							<div class=" w3-row">
-								<p class="w3-half comment_name">{{ comment.name }}:</p>
-								<p class="w3-half" style="text-align: right;">{{ comment.date }}</p>
+							<div class="">
+								<p class=" comment_name" style="float: left;">{{ comment.name }}:</p>
+								<p class="" style="float: right;">{{ comment.date }}</p>
 							</div>
-							<div class="comment_body">
+							<div class="comment_body" style="clear: both;">
 								<p>{{ comment.body }}</p>
 							</div>
 							<div class="w3-bar" style="width: 50%; margin-left: 25%; margin-right: 25%; ">
@@ -151,7 +155,7 @@
 				{% endfor %}
 				<div class="w3-container">
 					<div class="w3-row">
-						<div class="w3-bar" style="border-radius: 10px;;>
+						<div class="w3-bar">
 							<a href="{{ url_for('main.view', num=photo.id) }}">
 								<button class="w3-bar-item w3-button w3-black" style="width: {{ percent }}%;"><i class="fa fa-arrow-left"></i></button>
 							</a>
@@ -176,9 +180,10 @@
 					</div> 
 				</div>
 			</div>
-		</div>
+		</div>	
 		<br />
 	</div>
+</div>
 </div>
 
 <script>
