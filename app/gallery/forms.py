@@ -14,6 +14,12 @@ class UploadForm(FlaskForm):
     submit = SubmitField("Submit")
 
 
+class CommentForm(FlaskForm):
+    name = StringField('Name: ', validators=[DataRequired()])
+    body = TextAreaField('Body: ', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+
 class LoginForm(FlaskForm):
     email = StringField('Username: ', validators=[DataRequired()])
     password = PasswordField('Password: ', validators=[DataRequired()])

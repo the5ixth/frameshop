@@ -11,6 +11,16 @@ class Photo(db.Model):
     artist = db.Column(db.String(50), default="")
 
 
+class Comments(db.Model):
+    __tablename__ = 'comments'
+    id = db.Column(db.Integer, primary_key=True)
+    photoid = db.Column(db.Integer, db.ForeignKey('photos.id'))
+    name = db.Column(db.String(50), nullable=False)
+    body = db.Column(db.Text, nullable=False)
+    date = db.Column(db.String(50))
+    hidden = db.Column(db.Boolean, default=False)
+
+
 class Blog(db.Model):
     __tablename__ = 'blog'
     id = db.Column(db.Integer, primary_key=True)

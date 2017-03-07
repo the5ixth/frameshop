@@ -9,13 +9,42 @@ body {
     background-size: cover;
 }
 
+.hidden{
+	display: none;
+}
+
+.bar-center{
+	width: 50%;
+	margin-right: 25%;
+	margin-left: 25%;
+}
+
 #gallhead {
 	background-color: #c5c5c5;
+}
+
+.comment{
+	max-width: 500px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.comment_name{
+	color: red;
+	font-size: 16px;
+	text-align: left;
+}
+
+.comment_body{
+	text-align: left;				
 }
 
 .content {
   min-height: calc(100vh - 386px);
 }
+
+
 .footer {
   min-height: 236px;
 }
@@ -43,7 +72,7 @@ body {
 }
 
 .banner{
-	text-align: center;
+	text-align: cent	er;
 	padding-top: 20px;
 	font-family: Logger;
 	font-size: 60px;

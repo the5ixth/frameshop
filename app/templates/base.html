@@ -7,12 +7,12 @@
 
     <link rel="stylesheet" href="/static/css/w3.css">
     <link rel="stylesheet" href="/static/css/montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
-    ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel='stylesheet' href="/static/css/custom.css">
-
-    <style><
+	
+	<script src="/static/css/jquery.js"></script>
+    <style>
         body,h1 {font-family: "Montserrat", sans-serif}
         img {margin-bottom: -7px}
         .w3-row-padding img {margin-bottom: 12px}t
@@ -43,9 +43,19 @@
 				{% if user.authenticated: %}
 					<li class="w3-right"><a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.logout' ) }}">Logout</a></li>
 					<li class="w3-right"><a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.upload' ) }}">Upload</a></li>
+					<li class="w3-right">
+						<div class="w3-dropdown-click">
+							<button class="w3-button"><i class="fa fa-gear"></i></button>
+							<div class="w3-dropdown-content">
+								<a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.logout' ) }}">Logout</a>
+								<a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.upload' ) }}">Upload</a>
+							</div>
+						</div>
+					</li>
 				{% endif %}
 			</ul>
 	   
+	   		
 		    {% block body %}
 		    {% endblock %}
 

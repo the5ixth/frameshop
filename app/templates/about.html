@@ -34,7 +34,7 @@
 						{% if photo: %}
 							<div class="w3-card" style="background-color: #e5e5e5;">
 								<h5 > {{ photo.title }}</h5>
-					 			<a href="{{ url_for('main.static', filename='images/'+photo.imgfilename)}}">
+					 			<a href="/gallery/image/{{photo.id}}">
 									<img class="thumb" src="{{ url_for('static', filename='images/'+photo.imgfilename)}}" style="width:100%">
 								</a>
 							</div>

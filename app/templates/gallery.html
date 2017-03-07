@@ -34,36 +34,36 @@
 			</div>
 	
 		</div>
-		<div class="w3-container">
-			<div class=" centered">
+		<div class="w3-container centered" >
+			<div class=" w3-bar"style="width: 50%; margin-left: 25%; margin-right: 25%;">
 				<a href="{{ url_for('main.gallery') }}">
-					<button class="w3-btn w3-hover-white" ><i class="fa fa-arrow-left"></i></button>
+					<button class="w3-bar-item w3-btn w3-black w3-hover-white"  style="width: {{ percent }}%;" ><i class="fa fa-arrow-left"></i></button>
 				</a>
-				{% if photos.prev_num -1 > 0 %}
+				{% if photos.prev_num -1 > 0 %}	
 					<a href="{{ url_for('main.gallery', page=photos.prev_num-1) }}">
-						<button class="w3-btn  w3-hover-white" >{{ photos.prev_num - 1 }}</button>
+						<button class="w3-bar-item w3-btn  w3-black w3-hover-white"  style="width: {{ percent }}%;" >{{ photos.prev_num - 1 }}</button>
 					</a>
 				{% endif %}
 				{% if photos.has_prev %}
 					<a href="{{ url_for('main.gallery', page=photos.prev_num) }}">
-						<button class="w3-btn w3-hover-white" >{{ photos.prev_num }}</button>
+						<button class="w3-bar-item w3-btn w3-black w3-hover-white"  style="width: {{ percent }}%;" >{{ photos.prev_num }}</button>
 					</a>
 				{% endif %}
 				<a href="{{ url_for('main.gallery', page=photos.page) }}">
-					<button class="w3-btn w3-red w3-hover-white" >{{ photos.page }}</button>
+					<button class="w3-bar-item w3-btn w3-red w3-hover-white"  style="width: {{ percent }}%;" >{{ photos.page }}</button>
 				</a>
 				{% if photos.has_next %}
 					<a href="{{ url_for('main.gallery', page=photos.next_num) }}">
-						<button class="w3-btn  w3-hover-white" >{{ photos.next_num }}</button>
+						<button class="w3-bar-item w3-btn w3-black w3-hover-white"  style="width: {{ percent }}%;" >{{ photos.next_num }}</button>
 					</a>
 				{% endif %}
 				{% if photos.next_num + 1 <= photos.pages %}
 					<a href="{{ url_for('main.gallery', page=photos.next_num+1) }}">
-						<button class="w3-btn w3-hover-white" >{{ photos.next_num + 1 }}</button>
+						<button class="w3-bar-item w3-btn w3-black w3-hover-white"  style="width: {{ percent }}%;" >{{ photos.next_num + 1 }}</button>
 					</a>
 				{% endif %}
 				<a href="{{ url_for('main.gallery', page=last_page) }}">
-					<button class="w3-btn w3-hover-white" ><i class="fa fa-arrow-right"></i></button>
+					<button class="w3-bar-item w3-btn w3-black w3-hover-white"  style="width: {{ percent }}%;" ><i class="fa fa-arrow-right"></i></button>
 				</a>
 			</div> 
 		</div>

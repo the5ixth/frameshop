@@ -6,7 +6,7 @@ from .. import login_manager, bcrypt
 from .forms import LoginForm, UploadForm, SignupForm, EditForm, DescForm
 from flask_login import current_user, login_required, login_user, logout_user, confirm_login, fresh_login_required
 
-from .models import User, Photo, Description
+from .models import User, Photo, Description, Comments
 
 from .. import db
 
@@ -106,6 +106,35 @@ def delete(num):
     db.session.commit()
     return redirect(url_for('main.about'))
 
+
+@auth_flask_login.route('/delete/comment/<int:num>')
+@login_required
+def delete_comment(num):
+    cmt = Comments.query.get(num)
+    photo = cmt.photoid
+    db.session.delete(cmt)
+    db.session.commit()
+    return redirect(url_for('main.view', num=photo))
+
+@auth_flask_login.route('/hide/comment/<int:num>')
+@login_required
+def hide_comment(num):
+    cmt = Comments.query.get(num)
+    photo = cmt.photoid
+    cmt.hidden = True
+    db.session.add(cmt)
+    db.session.commit()
+    return redirect(url_for('main.view', num=photo))
+
+@auth_flask_login.route('/unhide/comment/<int:num>')
+@login_required
+def unhide_comment(num):
+    cmt = Comments.query.get(num)
+    photo = cmt.photoid
+    cmt.hidden = False
+    db.session.add(cmt)
+    db.session.commit()
+    return redirect(url_for('main.view', num=photo))
 
 @auth_flask_login.route('/edit/image/<int:num>', methods={'GET', 'POST'})
 @login_required

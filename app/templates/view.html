@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% from "macros.html" import render_field %}
 
 {% block body %}
 <div class="w3-content" style="max-width:1000px">
@@ -39,24 +40,137 @@
 					{% endif %}
 				</div>
 			</div>
+			<hr />
+			<div class="centered w3-bar bar-center">
+				{% if user.authenticated: %}
+				<a href="/delete/image/{{photo.id}}">
+					<button class="w3-btn w3-bar-item w3-hover-red" style="width: 33%;">Delete</button>
+				</a>
+				<a href="{{ url_for('main.gallery') }}">
+					<button class="w3-btn w3-bar-item w3-black w3-hover-white" style="width: 33%;">Back to Gallery</button>
+				</a>
+				<a href="/edit/image/{{photo.id}}">
+					<button class="w3-btn w3-bar-item w3-hover-blue" style="width: 33%;">Edit</button>
+				</a>
+				{% else %}
+				<a href="{{ url_for('main.gallery') }}">
+					<button class="w3-btn w3-bar-item w3-black w3-hover-white">Back to Gallery</button>
+				</a>
+				{% endif %}
+			</div> 
+			<div class="comment">
+				<hr />
+				<div class="">
+					<button id="cmt_button" class="w3-button w3-gray w3-bar " stylel="width: 100%;">Leave a comment</button>
+					<br />
+					<br />
+				<div>
+				</div>
+				<div id="cmt_form" class="hidden">
+					<form class="w3-container block-center" method='POST' action="/gallery/image/{{ photo.id }}" enctype="multipart/form-data" style=" max-width: 600px;">
+						{{ form.csrf_token() }}
+						<dd>
+							<dt>
+								<label for="name">Name:</label>
+							</dt>
+							<dd>
+								<p style="text-align: left;">Name:</p>
+								<input id="name" name="name" value="" type="text">
+							</dd>
+							<dt>
+								<label for="body">Body:</label>
+							</dt>
+							<dd>
+								<p style="text-align: left;">Comment:</p>
+								<textarea id="body" name="body" value=""></textarea>
+							</dd>	
+							{{ render_field(form.submit) }}
+						</dd>
+					</form>
+					<hr />
+				</div>
+				{% for comment in comments.items: %}
+					{% if not comment.hidden : %}
+						<div class="comment">
+							<div class=" w3-row">
+								<p class="w3-half comment_name">{{ comment.name }}:</p>
+								<p class="w3-half" style="text-align: right;">{{ comment.date }}</p>
+							</div>
+							<div class="comment_body">
+								<p>{{ comment.body }}</p>
+							</div>
+							<div class="w3-bar" style="width: 50%; margin-left: 25%; margin-right: 25%; ">
+								{% if user.authenticated: %}
+									<a href="{{ url_for('auth_flask_login.delete_comment', num=comment.id) }}">
+										<button  class="w3-bar-item w3-button w3-black" style="width: 50%;">delete</button>
+									</a>
+									<a href="{{ url_for('auth_flask_login.hide_comment', num=comment.id) }}">
+										<button  class="w3-bar-item w3-button w3-black" style="width: 50%;">Hide</button>
+									</a>
+								{% endif %}
+							</div>
+							<hr />
+						</div>
+					{% elif comment.hidden and user.authenticated: %}
+						<div class="comment w3-opacity">
+							<div class="w3-row">
+								<p class="w3-half comment_name">{{ comment.name }}:</p>
+								<p class="w3-half" style="text-align: right;">{{ comment.date }}</p>
+							</div>
+							<div class="comment_body">
+								<p>{{ comment.body }}</p>
+							</div>
+							<div class="w3-bar bar-center">
+								<a href="{{ url_for('auth_flask_login.delete_comment', num=comment.id) }}">
+									<button  class="w3-bar-item w3-button w3-black" style="width: 50%;">delete</button>
+								</a>
+								<a href="{{ url_for('auth_flask_login.unhide_comment', num=comment.id) }}">
+									<button  class="w3-bar-item w3-button w3-black" style="width: 50%:">Unhide</button>
+								</a>
+							</div>
+							<hr />
+						</div>
+					{% endif %}
+				{% endfor %}
+				<div class="w3-container">
+					<div class="w3-row">
+						<div class="w3-bar" style="border-radius: 10px;;>
+							<a href="{{ url_for('main.view', num=photo.id) }}">
+								<button class="w3-bar-item w3-button w3-black" style="width: {{ percent }}%;"><i class="fa fa-arrow-left"></i></button>
+							</a>
+							{% if comments.prev_num > 0  %}
+							<a href="{{ url_for('main.view', num=photo.id, page=comments.prev_num) }}">
+								<button class="w3-bar-item w3-button w3-gray" style="width: {{ percent }}%;">Previous</button>
+							</a>
+							{% endif %}
+							<a href="{{ url_for('main.view', num=photo.id, page=comments.page) }}">
+								<button class="w3-bar-item w3-button w3-light-gray" style="width: {{ percent }}%;">Current</button>
+							</a>
+							{% if comments.has_next: %}
+							<a href="{{ url_for('main.view', num=photo.id, page=comments.next_num) }}">
+								<button class="w3-bar-item w3-button w3-gray" style="width: {{ percent }}%;">Next</button>
+							</a>
+							{% endif %}
+							<a href="{{ url_for('main.view', num=photo.id, page=last_page) }}">
+								<button class="w3-bar-item w3-button w3-black" style="width: {{ percent }}%;"><i class="fa fa-arrow-right"></i></button>
+							</a>
+							<hr />
+						</div>
+					</div> 
+				</div>
+			</div>
 		</div>
 		<br />
-		<div class="centered">
-			{% if user.authenticated: %}
-			<a href="/delete/image/{{photo.id}}">
-				<button class="w3-btn w3-round-xlarge w3-hover-red">Delete</button>
-			</a>
-			{% endif %}
-			<a href="{{ url_for('main.gallery') }}">
-				<button class="w3-btn w3-round-xlarge w3-hover-white">Back to Gallery</button>
-			</a>
-			{% if user.authenticated: %} 
-			<a href="/edit/image/{{photo.id}}">
-				<button class="w3-btn w3-round-xlarge w3-hover-blue">Edit</button>
-			</a>
-			{% endif %}
-		</div> 
 	</div>
 </div>
+
+<script>
+	$(document).ready(function(){
+		$("#cmt_button").click(function(){
+			$("#cmt_form").removeClass("hidden");
+			$("#cmt_button").addClass("hidden");
+		});
+	});
+</script>
 {% endblock %}
 
