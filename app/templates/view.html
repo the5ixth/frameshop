@@ -41,21 +41,38 @@
 				</div>
 			</div>
 			<hr />
-			<div class="centered w3-bar bar-center">
+			<div class="centered w3-bar mobile" style="width: 100%;">
 				{% if user.authenticated: %}
-				<a href="/delete/image/{{photo.id}}">
-					<button class="w3-btn w3-bar-item w3-hover-red" style="width: 33%;">Delete</button>
-				</a>
-				<a href="{{ url_for('main.gallery') }}">
-					<button class="w3-btn w3-bar-item w3-black w3-hover-white" style="width: 33%;">Back to Gallery</button>
-				</a>
-				<a href="/edit/image/{{photo.id}}">
-					<button class="w3-btn w3-bar-item w3-hover-blue" style="width: 33%;">Edit</button>
-				</a>
+					<a href="/delete/image/{{photo.id}}">
+						<button class="w3-btn w3-bar-item w3-hover-red" style="width: 25%;">Delete</button>
+					</a>
+					<a href="{{ url_for('main.gallery') }}">
+						<button class="w3-btn w3-bar-item w3-black w3-hover-white" style="width: 50%;">Back to Gallery</button>
+					</a>
+					<a href="/edit/image/{{photo.id}}">
+						<button class="w3-btn w3-bar-item w3-hover-blue" style="width: 25%;">Edit</button>
+					</a>
 				{% else %}
-				<a href="{{ url_for('main.gallery') }}">
-					<button class="w3-btn w3-bar-item w3-black w3-hover-white">Back to Gallery</button>
-				</a>
+					<a href="{{ url_for('main.gallery') }}">
+						<button class="w3-btn w3-bar-item w3-black w3-hover-white">Back to Gallery</button>
+					</a>
+				{% endif %}
+			</div>
+			<div class="centered w3-bar bar-center gal-btn">
+				{% if user.authenticated: %}
+					<a href="/delete/image/{{photo.id}}">
+						<button class="w3-btn w3-bar-item w3-hover-red" style="width: 33%;">Delete</button>
+					</a>
+					<a href="{{ url_for('main.gallery') }}">
+						<button class="w3-btn w3-bar-item w3-black w3-hover-white" style="width: 33%;">Back to Gallery</button>
+					</a>
+					<a href="/edit/image/{{photo.id}}">
+						<button class="w3-btn w3-bar-item w3-hover-blue" style="width: 33%;">Edit</button>
+					</a>
+				{% else %}
+					<a href="{{ url_for('main.gallery') }}">
+						<button class="w3-btn w3-bar-item w3-black w3-hover-white">Back to Gallery</button>
+					</a>
 				{% endif %}
 			</div> 
 			<div class="comment">

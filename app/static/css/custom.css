@@ -231,6 +231,10 @@ dd{
 		display: none;
 	}
 	
+	.gal-btn{
+		display: none;
+	}
+	
 	.mobile{
 		display: block;
 	}
