@@ -225,6 +225,13 @@ dd{
     margin-left: 0px;
 }
 
+.framed{
+	background-image: url('mobile.JPG');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 600px;
+}
+
 
 @media screen and (max-width: 760px){
 	.topnav li{
@@ -237,6 +244,10 @@ dd{
 	
 	.mobile{
 		display: block;
+	}
+	
+	.not-mobile{
+		display: none;
 	}
 	
 	body{
