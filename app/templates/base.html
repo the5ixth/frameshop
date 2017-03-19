@@ -43,15 +43,6 @@
 				{% if user.authenticated: %}
 					<li class="w3-right"><a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.logout' ) }}">Logout</a></li>
 					<li class="w3-right"><a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.upload' ) }}">Upload</a></li>
-					<li class="w3-right">
-						<div class="w3-dropdown-click">
-							<button class="w3-button"><i class="fa fa-gear"></i></button>
-							<div class="w3-dropdown-content">
-								<a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.logout' ) }}">Logout</a>
-								<a class="w3-hover-grey" href="{{ url_for( 'auth_flask_login.upload' ) }}">Upload</a>
-							</div>
-						</div>
-					</li>
 				{% endif %}
 			</ul>
 	   
